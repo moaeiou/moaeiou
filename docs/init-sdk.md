@@ -2,11 +2,11 @@
 ## 🚀 First, you need to prepare a Linux environment.
 > Demonstration system: Arch Linux amd64
 ```
-sudo pacman -Syu --needed base-devel make git gawk ncurses openssl zlib wget curl unzip python3 python-setuptools fillup rsync libxslt libxml2 boost findutils gcc g++ unzip patch
+sudo pacman -Syu --needed base-devel make git gawk ncurses openssl zlib zstd wget curl unzip python3 python-setuptools fillup rsync libxslt libxml2 boost findutils gcc g++ unzip patch
 ```
 > OR any pm you love.
 ## ⏬ Download SDK
-[All the mirros of immortalwrt](https://downloads.immortalwrt.org/acknowledgements.html)
+[All the mirrors of ImmortalWrt](https://downloads.immortalwrt.org/acknowledgements.html)
 ```
 curl -LO https://downloads.immortalwrt.org/releases/25.12.0-rc2/targets/x86/64/immortalwrt-sdk-25.12.0-rc2-x86-64_gcc-14.3.0_musl.Linux-x86_64.tar.zst
 ```
@@ -26,7 +26,9 @@ cd package/
 git clone [URI]
 ```
 ## 🚀 Launch
-> pn is for project floder name
+> Make sure your at SDK root
+>
+> pn is for project folder name
 ```
 make package/pn/compile V=s -j$(nproc)
 ```
