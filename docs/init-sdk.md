@@ -20,16 +20,4 @@ cd immortalwrt-sdk-25.12.0-rc2-x86-64_gcc-14.3.0_musl.Linux-x86_64
 make defconfig
 ./scripts/feeds update -a && ./scripts/feeds install -a
 ```
-## 📝 Clone source code
-```
-cd package/
-git clone [URI]
-```
-## 🚀 Launch
-> Make sure your at SDK root
->
-> pn is for project folder name
-```
-make package/pn/compile V=s -j$(nproc)
-```
-## 🎉 Done
+## 🎉 Done, SDK is avaliable now.
