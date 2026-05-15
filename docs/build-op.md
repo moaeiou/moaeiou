@@ -14,4 +14,5 @@ git clone [URI]
 ```
 make package/pn/compile V=s -j$(nproc)
 ```
-## 
+### ⚠️ Some projects require additional binaries; please refer to the How to build section of the project's README for details.
+# 🎉 The end.
