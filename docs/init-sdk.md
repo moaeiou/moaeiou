@@ -6,18 +6,21 @@ sudo pacman -Syu --needed base-devel make git gawk ncurses openssl zlib zstd wge
 ```
 > OR any pm you love.
 ## ⏬ Download SDK
+> You have two choices
+- ImmortalWrt SDK and OpenWrt SDK
+[All the mirrors of OpenWrt](https://openwrt.org/mirrors)
 [All the mirrors of ImmortalWrt](https://downloads.immortalwrt.org/acknowledgements.html)
 ```
-curl -LO https://downloads.immortalwrt.org/releases/25.12.0-rc2/targets/x86/64/immortalwrt-sdk-25.12.0-rc2-x86-64_gcc-14.3.0_musl.Linux-x86_64.tar.zst
+curl -LO [SDK URL]
 ```
 ## 📦 Unzip SDK
 ```
-tar -xvf immortalwrt-sdk-25.12.0-rc2-x86-64_gcc-14.3.0_musl.Linux-x86_64.tar.zst
+tar -xvf $SDK_PKG_NAME
 ```
 ## 🛠 Init SDK
 ```
-cd immortalwrt-sdk-25.12.0-rc2-x86-64_gcc-14.3.0_musl.Linux-x86_64
+cd $SDK_FOLDER_NAME
 make defconfig
 ./scripts/feeds update -a && ./scripts/feeds install -a
 ```
-## 🎉 Done, SDK is avaliable now.
+## 🎉 Done, SDK avaliable now.
