@@ -1,4 +1,4 @@
-name: 'Prepare ImmortalWrt SDK'
+name: 'Prepare SDK'
 description: 'Unified SDK preparation for multiple architectures'
 inputs:
   sdk_name:
@@ -19,7 +19,7 @@ runs:
         TEMP_NAME=${BASE_NAME%-*}
         TARGET=${TEMP_NAME##*-}
         SDK_VERSION=${TEMP_NAME%-*}
-        SDK_VERSION=${SDK_VERSION#immortalwrt-sdk-}
+        SDK_VERSION=${SDK_VERSION#openwrt-sdk-}
 
         curl -LO "https://downloads.immortalwrt.org/releases/$SDK_VERSION/targets/$TARGET/$SUBTARGET/$SDK_NAME.tar.zst"
         tar -xvf "${{ inputs.sdk_name }}.tar.zst"
