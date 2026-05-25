@@ -1,4 +1,4 @@
-# Mo通用公共许可证
+# Mo通用公共许可证(Mo Public License 缩写为MoPL)
 许可证版权信息：Copyright 2026 MoKanove 联系方式 : me@867678.xyz
 
 由于本仓库的历史原因 部分文件被GPL/AGPL项目引用 遂仓库其他文件使用MIT授权 但本文件以MoPL授权
