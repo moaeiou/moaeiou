@@ -24,6 +24,7 @@ You do or do not have the following rights
 ## The following rights shall be restricted: You can also do the following, but certain conditions must be met
 - Modifying the software or publishing improved versions: You can modify the original software, but you have ONLY TWO WAYS to do so
 1. Merge into Upstream: Submit your code changes back to the main branch via a Pull Request, and have it merged into the upstream
+
 2. Go Solo with a Complete Rename: Change the software's name to something completely different and clearly state that it is NOT the original software
 ## You DO NOT have the following rights: You CANNOT do the following
 - Confusing the modified software with the original version: Riding on the original software's coattails or using its brand name to claim you are the developer after making modifications
@@ -58,6 +59,7 @@ You do or do not have the following rights
 ## 以下权利将受到限制：您也可以做下列事情，但需要满足一定的条件
 - 修改或发布改进版本：您可以修改原软件，但您只有两种方式
 1.修改后并入主线：改过代码之后向主线发起Pull Request，并入主线
+
 2.改一个完全不同的名称并清晰的标注不是原软件
 ## 您没有下列权利：您不可以做下列事情
 - 将修改过的软件与原版混淆：修改过之后拿去蹭原版的热度说你就是开发者
