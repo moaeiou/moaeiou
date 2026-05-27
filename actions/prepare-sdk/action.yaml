@@ -21,7 +21,7 @@ runs:
         SDK_VERSION=${TEMP_NAME%-*}
         SDK_VERSION=${SDK_VERSION#openwrt-sdk-}
 
-        curl -LO "https://openwrt.pixeldeck.net/releases/$SDK_VERSION/targets/$TARGET/$SUBTARGET/$SDK_NAME.tar.zst"
+        curl -LO "https://downloads.openwrt.org/releases/$SDK_VERSION/targets/$TARGET/$SUBTARGET/$SDK_NAME.tar.zst"
         tar -xvf "${{ inputs.sdk_name }}.tar.zst"
         rm "${{ inputs.sdk_name }}.tar.zst"
 
