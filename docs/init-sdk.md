@@ -23,4 +23,6 @@ cd $SDK_FOLDER_NAME
 make defconfig
 ./scripts/feeds update -a && ./scripts/feeds install -a
 ```
-## 🎉 Done, SDK avaliable now.
+## ⚖️ License
+> This Document is licensed under the [MoPL](https://github.com/mokanove/mokanove/blob/main/docs/license.md)
+## 🎉 The End.
