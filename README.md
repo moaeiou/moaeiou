@@ -5,9 +5,8 @@
 >
 > Freedom. Computers should serve users, not software vendors.
 ## My Skills
-![Skills Card](https://camo.githubusercontent.com/25376a159ff8ec02c0197c5847d20a2bf4e1cadad2b95e884c3f29e8378bef9d/68747470733a2f2f736b696c6c69636f6e732e6465762f69636f6e733f693d617374726f2c68746d6c2c6373732c747970657363726970742c6a6176617363726970742c676f6c616e672c6370702c7068702c646f636b65722c6d7973716c2c6e67696e782c6769746875622c636c6f7564666c6172652c776f726b6572732c6769742c676d61696c2c706e706d2c6c696e75782c617263682c64656269616e)
+![Skills](https://skillicons.dev/icons?i=nginx,astro,vite,html,css,typescript,javascript,php,docker,mysql,pnpm,golang,cpp,git,github,cloudflare,workers,gmail,linux,arch,debian,ubuntu)
 ## Información para mi GitHub
-![Por](https://camo.githubusercontent.com/00d57122ebe08338fd029fd23f9b4b7fdb12eda97232a06f179b7bf7d3abe897/68747470733a2f2f6769746875622d726561646d652d73746174732d6f6e652d626963652e76657263656c2e6170702f6170693f757365726e616d653d6d6f6b616e6f7665)
+![Ni idea](https://github-readme-stats-one-bice.vercel.app/api?username=mokanove)
 ### Social Media
-[GitHub](https://github.com/mokanove)
-[WebSite](https://867678.xyz/)
+[GitHub](https://github.com/mokanove) [WebSite](https://867678.xyz/)
