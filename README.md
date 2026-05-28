@@ -5,7 +5,7 @@
 >
 > Freedom. Computers should serve users, not software vendors.
 ## My Skills
-![Skills](https://skillicons.dev/icons?i=nginx,astro,vite,html,css,typescript,javascript,php,docker,mysql,pnpm,golang,cpp,git,github,cloudflare,workers,gmail,linux,arch,debian,ubuntu)
+![Skills](https://skillicons.dev/icons?i=nginx,astro,vite,html,css,typescript,javascript,php,docker,mysql,pnpm,golang,cpp,cs,git,github,cloudflare,workers,gmail,linux,arch,debian,ubuntu)
 ## Información para mi GitHub
 ![Ni idea](https://github-readme-stats-one-bice.vercel.app/api?username=mokanove)
 ### Social Media
