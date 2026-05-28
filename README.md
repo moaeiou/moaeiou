@@ -9,5 +9,5 @@
 ## Información para mi GitHub
 ![Ni idea](https://github-readme-stats-one-bice.vercel.app/api?username=mokanove)
 
-### Social Media
+## Social Media
 [GitHub](https://github.com/mokanove) [WebSite](https://867678.xyz/)
