@@ -16,9 +16,7 @@ jobs:
         shell: bash
         run: |
           sudo apt update
-          sudo apt install krita kdenlive nodejs wine-hq nginx
-          sleep 5
-          exit 0
+          sudo apt install krita kdenlive nodejs nginx python3
       - name: Pull his underwear
         shell: bash
         run: |
