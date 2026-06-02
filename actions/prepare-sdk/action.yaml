@@ -13,7 +13,7 @@ runs:
       run: |
         set -e
 
-        SDK_NAME="openwrt-sdk-x86-64_gcc-14.3.0_musl.Linux-x86_64"
+        SDK_NAME="${{ inputs.sdk_name }}"
         BASE_NAME=${SDK_NAME%%_gcc*}
         SUBTARGET=${BASE_NAME##*-}
         TEMP_NAME=${BASE_NAME%-*}
