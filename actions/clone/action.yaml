@@ -12,6 +12,6 @@ runs:
       shell: bash
       run: |
           set -e
+          
           cd ${{ inputs.sdk_name }}/package/
-          rm -rf ${{ inputs.project_name }}
           git clone --depth 1 https://github.com/mokanove/${{ inputs.project_name }}.git
