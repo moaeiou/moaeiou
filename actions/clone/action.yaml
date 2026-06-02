@@ -12,6 +12,12 @@ runs:
       shell: bash
       run: |
           set -e
-
           cd ${{ inputs.sdk_name }}/package/
-          git clone https://github.com/mokanove/${{ inputs.project_name }}.git
+
+          if [ -d "${{ inputs.project_name }}/.git" ]; then
+            cd ${{ inputs.project_name }}
+            git pull
+          else
+            rm -rf ${{ inputs.project_name }}
+            git clone --depth 1 https://github.com/mokanove/${{ inputs.project_name }}.git
+          fi
