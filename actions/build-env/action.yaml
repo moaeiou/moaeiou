@@ -3,7 +3,7 @@ description: "Preparing build environment"
 runs:
   using: "composite"
   steps:
-    - name: Install Build Dependencies
+    - name: Preparing build environment
       shell: bash
       run: |
           sudo apt update
