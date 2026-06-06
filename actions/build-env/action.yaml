@@ -1,5 +1,5 @@
-name: "Install Build Dependencies"
-description: "Install Build Dependencies"
+name: "Preparing build environment"
+description: "Preparing build environment"
 runs:
   using: "composite"
   steps:
