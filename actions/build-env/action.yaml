@@ -7,6 +7,5 @@ runs:
       shell: bash
       run: |
           sudo apt update
-          sudo apt install -y build-essential libncurses5-dev libncursesw5-dev \
-          zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget curl unzip \
-          python3 python3-pyelftools
+          sudo apt install build-essential libncursesw5-dev \
+          gettext xsltproc python3-pyelftools
