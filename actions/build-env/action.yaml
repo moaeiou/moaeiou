@@ -6,6 +6,6 @@ runs:
     - name: Preparing build environment
       shell: bash
       run: |
-          sudo apt update
-          sudo apt install build-essential \
+          sudo apt-get update
+          sudo apt-get install build-essential \
           gettext xsltproc python3-pyelftools
