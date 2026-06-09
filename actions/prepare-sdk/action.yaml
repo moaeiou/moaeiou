@@ -1,9 +1,5 @@
 name: 'Prepare SDK'
 description: 'Unified SDK preparation for multiple architectures'
-inputs:
-  sdk_name:
-    description: 'The full name of the SDK tarball (without extension)'
-    required: true
 
 runs:
   using: "composite"
@@ -13,18 +9,8 @@ runs:
       run: |
         set -e
 
-        SDK_NAME="${{ inputs.sdk_name }}"
-        BASE_NAME=${SDK_NAME%%_gcc*}
-        SUBTARGET=${BASE_NAME##*-}
-        TEMP_NAME=${BASE_NAME%-*}
-        TARGET=${TEMP_NAME##*-}
-
-        curl -LO "https://downloads.openwrt.org/snapshots/targets/$TARGET/$SUBTARGET/$SDK_NAME.tar.zst"
-
-        tar -xvf "$SDK_NAME.tar.zst"
-        rm "$SDK_NAME.tar.zst"
-        cd "$SDK_NAME"
-
+        git clone https://github.com/openwrt/openwrt.git
+        cd openwrt
         make defconfig
         ./scripts/feeds update -a
         ./scripts/feeds install -a
