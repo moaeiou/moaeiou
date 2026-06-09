@@ -20,4 +20,5 @@ jobs:
       - name: Pull his underwear
         shell: bash
         run: |
+          pwd
           curl ipinfo.io
