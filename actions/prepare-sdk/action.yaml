@@ -18,7 +18,7 @@ runs:
         TEMP_NAME=${BASE_NAME%-*}
         TARGET=${TEMP_NAME##*-}
 
-        curl -LO "https://downloads.openwrt.org/snapshots/targets/$TARGET/$SUBTARGET/$SDK_NAME.tar.zst"
+        wget -O ${{ inputs.sdk_name }} "https://downloads.openwrt.org/snapshots/targets/$TARGET/$SUBTARGET/$SDK_NAME.tar.zst"
 
         tar -xvf "$SDK_NAME.tar.zst"
         rm "$SDK_NAME.tar.zst"
