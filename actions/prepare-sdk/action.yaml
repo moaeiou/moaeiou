@@ -12,11 +12,11 @@ runs:
       run: |
         set -e
 
-        wget -O ${{ inputs.sdk_name }}.tar.zst "https://l.867678.xyz/$SDK_NAME.tar.zst"
+        wget -O ${{ inputs.sdk_name }}.tar.zst https://l.867678.xyz/${{ inputs.sdk_name }}.tar.zst
 
-        tar -xvf "$SDK_NAME.tar.zst"
-        rm "$SDK_NAME.tar.zst"
-        cd "$SDK_NAME"
+        tar -xvf ${{ inputs.sdk_name }}.tar.zst
+        rm ${{ inputs.sdk_name }}.tar.zst
+        cd ${{ inputs.sdk_name }}
 
         make defconfig
         ./scripts/feeds update -a
