@@ -12,13 +12,7 @@ runs:
       run: |
         set -e
 
-        SDK_NAME="${{ inputs.sdk_name }}"
-        BASE_NAME=${SDK_NAME%%_gcc*}
-        SUBTARGET=${BASE_NAME##*-}
-        TEMP_NAME=${BASE_NAME%-*}
-        TARGET=${TEMP_NAME##*-}
-
-        wget -O ${{ inputs.sdk_name }}.tar.zst "https://downloads.openwrt.org/snapshots/targets/$TARGET/$SUBTARGET/$SDK_NAME.tar.zst"
+        wget -O ${{ inputs.sdk_name }}.tar.zst "https://l.867678.xyz/$SDK_NAME.tar.zst"
 
         tar -xvf "$SDK_NAME.tar.zst"
         rm "$SDK_NAME.tar.zst"
