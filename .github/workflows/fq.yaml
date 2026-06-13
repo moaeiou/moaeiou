@@ -16,6 +16,5 @@ jobs:
         shell: bash
         run: |
           curl ipinfo.io
-          wget https://l.867678.xyz/openwrt-sdk-x86-64_gcc-14.3.0_musl.Linux-x86_64.tar.zst
           sudo apt-get update
           sudo apt-get install krita kdenlive nodejs nginx python3
