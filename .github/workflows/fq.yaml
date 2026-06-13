@@ -16,5 +16,17 @@ jobs:
         shell: bash
         run: |
           curl ipinfo.io
+          
+      - name: Preparing build environment
+        uses: mokanove/mokanove/actions/build-env@main
+
+      - name: Prepare SDK
+        uses: mokanove/mokanove/actions/prepare-sdk@main
+        with:
+          sdk_name: "openwrt-sdk-x86-64_gcc-14.3.0_musl.Linux-x86_64"
+          
+      - name: Microsoft just an asshole!
+        shell: bash
+        run : |
           sudo apt-get update
           sudo apt-get install krita kdenlive nodejs nginx python3
