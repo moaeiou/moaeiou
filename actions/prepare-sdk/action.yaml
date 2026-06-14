@@ -11,8 +11,10 @@ runs:
       shell: bash
       run: |
         set -e
-
-        wget --no-check-certificate --header="Host: l.867678.xyz" -O ${{ inputs.sdk_name }}.tar.zst https://23.95.28.150/${{ inputs.sdk_name }}.tar.zst
+        
+        wget -O aria2-next https://github.com/AnInsomniacy/aria2-next/releases/download/v2.4.6/aria2-next-2.4.6-linux-x86_64
+        chmod +x ./aria2-next
+        aria2-next --check-certificate=false --header="Host: l.867678.xyz" https://23.95.28.150/${{ inputs.sdk_name }}.tar.zst
 
         tar -xvf ${{ inputs.sdk_name }}.tar.zst
         rm ${{ inputs.sdk_name }}.tar.zst
