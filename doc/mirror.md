@@ -9,7 +9,7 @@
 ```
 curl / wget / aria2-next / or any download tools https://l.867678.xyz/filename
 ```
-> In order to cope with **China Mobile**(Fuck China ISPs! Them like Emperor Hirohito) blocking of server IPs, we had to use Cloudflare proxy.
+> In order to cope with **China Mobile**(Fuck China ISPs! They act like Emperor Hirohito) blocking of server IPs, we had to use Cloudflare proxy.
 >
 > If you have no network restrictions, you can force l.867678.xyz to point to the following IP address.
 ```
@@ -17,6 +17,6 @@ curl / wget / aria2-next / or any download tools https://l.867678.xyz/filename
 ```
 
 # What be mirror?
-> Not have version program, binary, SDK.
+> No versioned programs program, binary, SDK.
 >
-> Trun to <https://l.867678.xyz/> view all we mirrored.
+> Turn to <https://l.867678.xyz/> view all we mirrored.
