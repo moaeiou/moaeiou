@@ -1,8 +1,8 @@
 # 👋Hola, Soy Mo Kanove
-> Social Media & conexión
-
+![Logo](https://867678.xyz/favicon.svg)
+> Social Medias & conexión
 [GitHub](https://github.com/mokanove) [WebSite](https://867678.xyz/)
-[Mail](mailto:me@867678.xyz)
+[E-Mail](mailto:me@867678.xyz)
 # introducir
 > Fast. Everything for high speed!
 >
