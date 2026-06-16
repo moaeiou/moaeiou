@@ -1,4 +1,15 @@
-# Compiling OpenWrt SDK.
+# ✋ Install OpenWrt Package
+> using ssh to connect your router
+```
+ssh root@IP # option: -p port
+```
+> Then download package
+```
+cd /tmp # It is usually stored here. If you have limited memory, please find another location.
+wget [URL of Package]
+apk add --allow-untrusted ./pkg.apk # --allow-untrusted because software not included in software repositories generally lacks a digital signature and should be ignored.
+```
+# 🔧 Compiling OpenWrt SDK.
 ## 🚀 You need to prepare a Linux environment.
 > Demonstration system: Arch Linux amd64
 ```
