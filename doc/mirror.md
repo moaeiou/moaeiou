@@ -27,5 +27,5 @@ curl / wget / aria2-next / or any download tools https://l.867678.xyz/filename
 wget --no-check-certificate --header="Host: l.867678.xyz" https://23.95.28.150/filename
 ```
 > Or any way to reffer IP
-# ⌚ Time zone about servers
-> Usullay using UTC+0(GMT)
+# ⌚ Default time zone
+> UTC+0(GMT)
