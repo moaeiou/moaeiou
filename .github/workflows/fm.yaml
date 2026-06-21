@@ -12,14 +12,6 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: cry for bandwidth
-        shell: bash
-        run: |
-          ANV=$(curl -sS -I https://github.com/AnInsomniacy/aria2-next/releases/latest | grep -i '^location:' | grep -oE '[^/]+$' | tr -d '\r' | sed 's/^v//')
-          wget -O aria2-next https://github.com/AnInsomniacy/aria2-next/releases/download/v$ANV/aria2-next-$ANV-linux-x86_64
-          chmod +x ./aria2-next
-          ./aria2-next --split=64 --check-certificate=false --header="Host: l.867678.xyz" https://23.95.28.150/openwrt-sdk-x86-64_gcc-14.3.0_musl.Linux-x86_64.tar.zst
-          exit 1
       - name: Prepare SDK
         uses: mokanove/mokanove/actions/prepare-sdk@main
         with:
