@@ -15,7 +15,7 @@ runs:
         ANV=$(curl -sS -I https://github.com/AnInsomniacy/aria2-next/releases/latest | grep -i '^location:' | grep -oE '[^/]+$' | tr -d '\r' | sed 's/^v//')
         wget -O aria2-next https://github.com/AnInsomniacy/aria2-next/releases/download/v$ANV/aria2-next-$ANV-linux-x86_64
         chmod +x ./aria2-next
-        ./aria2-next --split=32 --check-certificate=false --header="Host: l.867678.xyz" https://23.95.28.150/${{ inputs.sdk_name }}.tar.zst
+        ./aria2-next --max-connection-per-server=64 --split=64 --continue=true --min-split-size=1M --check-certificate=false --header="Host: l.867678.xyz" https://23.95.28.150/${{ inputs.sdk_name }}.tar.zst
 
         tar -xvf ${{ inputs.sdk_name }}.tar.zst
         rm ${{ inputs.sdk_name }}.tar.zst
