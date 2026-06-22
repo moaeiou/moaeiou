@@ -12,13 +12,13 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Preparing build environment
+        uses: mokanove/mokanove/actions/build-env@main
+        
       - name: Prepare SDK
         uses: mokanove/mokanove/actions/prepare-sdk@main
         with:
           sdk_name: "openwrt-sdk-x86-64_gcc-14.3.0_musl.Linux-x86_64"
-
-      - name: Preparing build environment
-        uses: mokanove/mokanove/actions/build-env@main
         
       - name: Fuck Microsoft Azure!
         shell: bash
