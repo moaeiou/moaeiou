@@ -45,7 +45,8 @@ git clone ⚠️[URI]
 ## 🚀 Launch
 > Make sure your at SDK root
 ```
-make package/⚠️project_name/compile V=s -j$(nproc)
+make package/⚠️project_name/compile -j$(nproc)
+# debug + V=s
 ```
 ## ⚖️ License
 > This Document is licensed under the [MoPL](https://867678.xyz/docs/license)
