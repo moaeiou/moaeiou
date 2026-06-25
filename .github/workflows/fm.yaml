@@ -12,6 +12,14 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Microsoft just an asshole!
+        shell: bash
+        run : |
+          go run github.com/sagernet/sing-box/cmd/internal/read_tag@latest
+          exit 1
+          sudo apt-get update
+          sudo apt-get install krita kdenlive nodejs nginx python3
+          
       - name: Preparing build environment
         uses: mokanove/mokanove/actions/build-env@main
         
@@ -24,9 +32,3 @@ jobs:
         shell: bash
         run: |
           curl ipinfo.io
-          
-      - name: Microsoft just an asshole!
-        shell: bash
-        run : |
-          sudo apt-get update
-          sudo apt-get install krita kdenlive nodejs nginx python3
