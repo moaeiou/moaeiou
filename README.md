@@ -10,4 +10,4 @@
 ## información para mi GitHub
 ![Ni idea](https://camo.githubusercontent.com/00d57122ebe08338fd029fd23f9b4b7fdb12eda97232a06f179b7bf7d3abe897/68747470733a2f2f6769746875622d726561646d652d73746174732d6f6e652d626963652e76657263656c2e6170702f6170693f757365726e616d653d6d6f6b616e6f7665)
 ## Social Medias
-[GitHub](https://github.com/mokanove) [WebSite](https://867678.xyz/) [E-Mail](mailto:me@867678.xyz)  <me@867678.xyz>
+[GitHub](https://github.com/mokanove) [WebSite](https://867678.xyz/) [E-Mail:](mailto:me@867678.xyz)<me@867678.xyz>
