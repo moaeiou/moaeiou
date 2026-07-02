@@ -18,7 +18,7 @@ jobs:
       - name: Prepare SDK
         uses: mokanove/mokanove/actions/prepare-sdk@main
         with:
-          sdk_name: "openwrt-sdk-x86-64_gcc-14.3.0_musl.Linux-x86_64"
+          sdk_arch: "x86-64"
         
       - name: Fuck Microsoft Azure!
         shell: bash
