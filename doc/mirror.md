@@ -3,7 +3,7 @@
 | Question | Anwser |
 |  ----  | ----  |
 | Time zone | Default always UTC+0 |
-| How long to sync | RSYNC auto push |
+| How long to sync | Every 4 hours from 00:00(UTC+0) |
 | What be mirror | Dynamic version programs program, binary, SDK. |
 | Why using mirror | Sometime github speed maybe slowly, yeah. |
 ## 💁 How to use?
