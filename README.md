@@ -1,4 +1,4 @@
-# 👋Hola, Soy Mo AEIOU
+# 👋Hola, Soy MoAEIOU
 ## Conexíon
 [GitHub](https://github.com/mokanove) [WebSite](https://867678.xyz/) [E-Mail:me@867678.xyz](mailto:me@867678.xyz)
 ## introducir
