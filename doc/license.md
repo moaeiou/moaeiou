@@ -1,5 +1,5 @@
 # Mo公共许可证(Mo Public License 缩写为MoPL)
-> 版权所有 2026 MoKanove 联系方式 : me@867678.xyz
+> 版权所有 2026 MoAEIOU 联系方式 : me@867678.xyz
 >
 > 本文件以MoPL授权 一样享有MoPL的所有权利
 >
