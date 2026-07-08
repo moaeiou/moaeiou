@@ -1,6 +1,8 @@
 # 👋Hola, Soy MoAEIOU
 ## Conexíon
-[GitHub](https://github.com/mokanove) [WebSite](https://867678.xyz/) [E-Mail:me@867678.xyz](mailto:me@867678.xyz)
+[GitHub](https://github.com/mokanove)
+[Telegram Channel](https://t.me/moaeiou)
+[WebSite](https://867678.xyz/) [E-Mail:me@867678.xyz](mailto:me@867678.xyz)
 ## introducir
 > Estan: LatinoAmerica, change location anytime.
 >
