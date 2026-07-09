@@ -1,7 +1,7 @@
 # Mo公共许可证(Mo Public License 缩写为MoPL)
 版权所有 2026 `MoAEIOU` 联系方式 : <me@867678.xyz>
 
-MoPL以滚动方式发行 时刻以<https://github.com/moaeiou/moaeiou/edit/main/doc/license.md>显示的最新版本为准
+MoPL以滚动方式发行 时刻以<https://github.com/moaeiou/moaeiou/blob/main/doc/license.md>显示的最新版本为准
 
 本文件以MoPL授权
 ## 协议内容
