@@ -1,4 +1,4 @@
-# 🚀 A Tourist of Mirror by MoKanove
+# 🚀 A Tourist of Mirror by MoAEIOU
 ## 🤔 Q&A
 | Question | Anwser |
 |  ----  | ----  |
@@ -18,6 +18,15 @@ https://l.867678.xyz/filename
 > Example using wget bypass CDN
 ```
 wget --no-check-certificate --header="Host: l.867678.xyz" https://23.95.28.150/filename
+```
+> Aslo can using motrix-next, it is very fast
+>
+> <https://github.com/AnInsomniacy/aria2-next> Give it a star!
+```
+ANV=$(curl -sS -I https://github.com/AnInsomniacy/aria2-next/releases/latest | grep -i '^location:' | grep -oE '[^/]+$' | tr -d '\r' | sed 's/^v//')
+wget -O aria2-next https://github.com/AnInsomniacy/aria2-next/releases/download/v$ANV/aria2-next-$ANV-linux-x86_64
+chmod +x ./aria2-next
+./aria2-next --max-connection-per-server=64 --split=64 --min-split-size=1M --continue=true --check-certificate=false --header="Host: l.867678.xyz" https://23.95.28.150/filename
 ```
 > Or force reffer IP
 ```
