@@ -4,7 +4,7 @@
 |  ----  | ----  |
 | Time zone | Default always UTC+0 |
 | How long to sync | Every 4 hours from 00:00(UTC+0) |
-| What be mirror | Dynamic version programs program, binary, SDK. |
+| What be mirror | Dynamic version programs, binary, SDK. Turn to the URL to view all it mirror|
 | Why using mirror | Sometime github speed maybe slowly, yeah. |
 ## 💁 How to use?
 ```
