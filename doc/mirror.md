@@ -4,13 +4,13 @@
 |  ----  | ----  |
 | Time zone | Default always UTC+0 |
 | How long to sync | Every 4 hours from 00:00(UTC+0) |
-| What be mirror | Dynamic version programs, binary, SDK. Turn to the URL to view all it mirror|
+| What be mirror | Dynamic version programs, binary, SDK. Turn to the URL to view all it mirror. |
 | Why using mirror | Sometime github speed maybe slowly, yeah. |
 ## 💁 How to use?
 ```
 https://l.867678.xyz/filename
 ```
-### Bypass CDN
+### 🚗 Bypass CDN
 > If you have no network restrictions, you can force l.867678.xyz to point to the following IP address.
 ```
 23.95.28.150
@@ -34,3 +34,13 @@ sudo -i
 whoami # make sure you as root
 echo "23.95.28.150 l.867678.xyz" >> /etc/hosts
 ```
+## 🙏 Thanks
+<https://cloudflare.com> BTW: I use cloudflare 5 years ago!
+
+<https://nginx.org>
+
+<https://www.spaceship.com/>
+
+<https://github.com/AnInsomniacy/aria2-next>
+
+<https://867678.xyz/project/fancyindex-theme>
