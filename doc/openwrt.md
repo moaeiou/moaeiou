@@ -10,7 +10,7 @@ wget [URL of Package]
 apk add --allow-untrusted ./pkg.apk # --allow-untrusted because software not included in software repositories generally lacks a digital signature and should be ignored.
 ```
 # 🔧 Compiling OpenWrt SDK.
-## 🚀 You need to prepare a Linux environment.
+## 🚀 You need to prepare a Linux amd64 environment.
 > Demonstration system: Arch Linux amd64
 ```
 sudo pacman -Syu --needed base-devel make git gawk ncurses openssl zlib zstd wget curl unzip python3 python-setuptools fillup rsync libxslt libxml2 boost findutils gcc g++ unzip patch
@@ -49,5 +49,4 @@ make package/⚠️project_name/compile -j$(nproc)
 # debug + V=s
 ```
 ## ⚖️ License
-> This Document is licensed under the [MoPL](https://867678.xyz/docs/license)
-## 🎉 The End.
+> This Document is licensed under the [MoPL](https://867678.xyz/doc/license)
