@@ -9,7 +9,6 @@
 > Desde: China. Mi ingles y Español es no bien.
 >
 > Trabajo: Development, fix device and program.
-### Todos
 - **Fast:** Everything for high speed!
 - **Safe:** The latest is safe.
 - **Freedom:** Computers should serve users, not software vendors.
