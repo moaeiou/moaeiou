@@ -6,7 +6,9 @@
 
 **Necesito**: Las platas, un bien Español, y un oficina.
 
-**座右铭**：正如我们享受他人的发明带来的巨大便利一样，我们也应该乐于有机会让自己的发明为他人服务，而且我们应该免费并慷慨地这么做。——本杰明·富兰克林自传
+**Lema**：Puesto que obtenemos gran provecho de los inventos de otras personas, deberíamos alegrarnos de tener la oportunidad de servir a los demás con alguna invención nuestra, y esto deberíamos hacerlo libre y generosamente.
+—Benjamin Franklin, Autobiografía
+
 ## Conexíon
 [GitHub](https://github.com/moaeiou)
 [WebSite](https://867678.xyz/)
