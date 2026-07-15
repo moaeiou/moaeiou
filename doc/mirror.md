@@ -34,10 +34,18 @@ sudo -i
 whoami # make sure you as root
 echo "23.95.28.150 l.867678.xyz" >> /etc/hosts
 ```
+## 🧩 Logo
+This <https://867678.xyz/favicon.svg> made by MoAEIOU and Krita
+
+<https://867678.xyz/favicon.svg> The logo only is a `svg`. But maybe you need more version?
+
+[PNG](https://r2.867678.xyz/moaeiou.png) [KRA](https://r2.867678.xyz/moaeiou.kra) 
 ## 🙏 Thanks
-<https://cloudflare.com> BTW: I use cloudflare 5 years ago!
+<https://cloudflare.com> BTW: I use cloudflare from `Nov 23,2021`!
 
 <https://nginx.org>
+
+<https://kde.org>
 
 <https://www.spaceship.com/>
 
