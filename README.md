@@ -10,12 +10,16 @@
 —Benjamin Franklin, Autobiografía
 
 ## Conexíon
-GPG Hash: F6CAA8CFEC4145974398DF631CEDB8D3CB4CC7BE (ECC)
+This GPG key has been verified at [keys.openpgp.org](https://keys.openpgp.org/search?q=me%40867678.xyz)
+
+GPG Hash(ECC Last Change:2026-07-19): 4983B46224D4B0A3CB4882811331669714CF2BC1 
 [GitHub](https://github.com/moaeiou)
 [WebSite](https://867678.xyz/)
 [Telegram](https://telegram.me/arrjeon)
 [X](https://x.com/Com0loquieras)
 [E-Mail:me@867678.xyz](mailto:me@867678.xyz)
+
+This `me@867678.xyz` email address can only receive messages, not send them; outgoing messages are usually sent from `mpjy000@gmail.com`.
 ## Descargar mis logos
 Copyright 2026 MoAEIOU All rights reserved.
 [SVG](https://867678.xyz/favicon.svg)
