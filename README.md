@@ -28,7 +28,7 @@ Copyright 2026 MoAEIOU All rights reserved. Licensed under the [MoPL](https://86
 [PNG](https://867678.xyz/moaeiou.png)
 [KRA](https://867678.xyz/moaeiou.kra)
 ### OpenPGP-Revocs
-Go to `this_repo/revocs/` to view revoked certificates.
+Go to [Here](https://github.com/moaeiou/moaeiou/tree/main/revocs) to view revoked certificates.
 
 Revoked certificates:
 `F6CAA8CFEC4145974398DF631CEDB8D3CB4CC7BE`
