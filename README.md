@@ -2,7 +2,7 @@
 ## introducir
 **¿Dondé estas?**: `China`, Ahora viva en Latinoamerica.
 
-**Gustas**: Computadora, música(escucho y cantar), bailar, viaje, habla español.
+**Gustas**: Computadora, música(escucho y cantar), bailar, viaje, estudio español.
 
 **Necesito**: Las platas, un bien Español, y un oficina.
 
