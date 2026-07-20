@@ -26,6 +26,7 @@ This `me@867678.xyz` email address can only receive messages, not send them; out
 [SVG](https://867678.xyz/favicon.svg)
 [PNG](https://867678.xyz/moaeiou.png)
 [KRA](https://867678.xyz/moaeiou.kra)
+
 Copyright 2026 MoAEIOU All rights reserved. Licensed under the [MoPL](https://867678.xyz/doc/MoPL)
 ### OpenPGP-Revocs
 Go to [Here](https://github.com/moaeiou/moaeiou/tree/main/revocs) to view revoked certificates.
