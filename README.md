@@ -23,14 +23,15 @@ GPG Hash(ECC Last Change:2026-07-19): 4983B46224D4B0A3CB4882811331669714CF2BC1
 This `me@867678.xyz` email address can only receive messages, not send them; outgoing messages are usually sent from `mpjy000@gmail.com`.
 ## Descargar
 ### Logo
-Copyright 2026 MoAEIOU All rights reserved. Licensed under the [MoPL](https://867678.xyz/doc/MoPL)
 [SVG](https://867678.xyz/favicon.svg)
 [PNG](https://867678.xyz/moaeiou.png)
 [KRA](https://867678.xyz/moaeiou.kra)
+Copyright 2026 MoAEIOU All rights reserved. Licensed under the [MoPL](https://867678.xyz/doc/MoPL)
 ### OpenPGP-Revocs
 Go to [Here](https://github.com/moaeiou/moaeiou/tree/main/revocs) to view revoked certificates.
 
 Revoked certificates:
+
 `F6CAA8CFEC4145974398DF631CEDB8D3CB4CC7BE`
 ## información para mi GitHub
 ![GitHub Stats](https://camo.githubusercontent.com/c4b1e1c6c43f2dedf0b2614bb4ce998c7f60612669b912739bbce9537ae87201/68747470733a2f2f6769746875622d73746174732d657874656e6465642e76657263656c2e6170702f6170693f757365726e616d653d6d6f6165696f752673686f775f69636f6e733d7472756526696e636c7564655f616c6c5f636f6d6d6974733d74727565)
