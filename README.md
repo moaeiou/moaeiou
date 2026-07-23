@@ -20,7 +20,7 @@ This GPG key has been verified at [keys.openpgp.org](https://keys.openpgp.org/se
 
 GPG Hash(ECC Last Change:2026-07-19): 4983B46224D4B0A3CB4882811331669714CF2BC1 
 
-This `me@867678.xyz` email address can only receive messages, not send them; outgoing messages are usually sent from `mpjy000@gmail.com`.
+This `me@867678.xyz` email address can only receive messages, not send them; outgoing messages are usually sent from `teamo20080406@gmail.com`.
 ## Descargar
 ### Logo
 [SVG](https://867678.xyz/favicon.svg)
