@@ -2,7 +2,7 @@
 ## introducir
 **¿Dondé estas?**: `China`, Ahora viva en Latinoamerica.
 
-**Gustas**: Computadora, música(escucho y cantar), bailar, viaje, estudio español.
+**Gusta**: Computadora, música(escucho y cantar), bailar, viaje, estudio español.
 
 **Necesito**: Las platas, un bien Español, y un oficina.
 
@@ -12,7 +12,7 @@
 ## Conexíon
 [GitHub](https://github.com/moaeiou)
 [WebSite](https://867678.xyz/)
-[Telegram](https://telegram.me/arrjeon)
+[Telegram](https://telegram.me/Tortillas111)
 [X](https://x.com/Com0loquieras)
 [E-Mail:me@867678.xyz](mailto:me@867678.xyz)
 
