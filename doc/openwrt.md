@@ -20,7 +20,7 @@ sudo pacman -Syu --needed base-devel make git gawk ncurses openssl zlib zstd wge
 > You have three choices
 [All the mirrors of OpenWrt](https://openwrt.org/mirrors)
 [All the mirrors of ImmortalWrt](https://downloads.immortalwrt.org/acknowledgements.html)
-[Mirror by MoKanove](https://867678.xyz/doc/mirror)
+[Mirror by MoKanove](https://867678.xyz/doc/Mirror)
 ```
 curl -LO ⚠️[SDK URL]
 # Not have curl? Let's try wget
@@ -49,4 +49,4 @@ make package/⚠️project_name/compile -j$(nproc)
 # debug + V=s
 ```
 ## ⚖️ License
-> This Document is licensed under the [MoPL](https://867678.xyz/doc/license)
+> This Document is licensed under the [MoPL](https://867678.xyz/doc/MoPL)
