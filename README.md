@@ -1,5 +1,5 @@
 # 👋Hola, Soy MoAEIOU
-## introducir
+## introduccion
 **¿Dondé estas?**: Vivo en Latinoamerica y desde `China`.
 
 **Gustas**: Computadora(Vibe codigo, reparar, usar), música(escucho , cantar y bailar), viajar todo el mundo, estudio español.
@@ -8,6 +8,7 @@
 
 **Lema**：Puesto que obtenemos gran provecho de los inventos de otras personas, deberíamos alegrarnos de tener la oportunidad de servir a los demás con alguna invención nuestra, y esto deberíamos hacerlo libre y generosamente.
 —Benjamin Franklin, Autobiografía
+
 ## Estilo
 **El último**: Siempre y rapido en el utilmo, porque me gustas las cosas nuevas.
 
@@ -43,7 +44,7 @@ This `me@867678.xyz` email address can only receive messages, not send them; out
 ![GitHub Stats](https://camo.githubusercontent.com/c4b1e1c6c43f2dedf0b2614bb4ce998c7f60612669b912739bbce9537ae87201/68747470733a2f2f6769746875622d73746174732d657874656e6465642e76657263656c2e6170702f6170693f757365726e616d653d6d6f6165696f752673686f775f69636f6e733d7472756526696e636c7564655f616c6c5f636f6d6d6974733d74727565)
 ## Mis habilidades
 ![Skills](https://skillicons.dev/icons?i=nginx,astro,vite,html,css,typescript,javascript,php,docker,mysql,pnpm,golang,cpp,cs,git,github,cloudflare,workers,gmail,linux,arch,debian,ubuntu)
-## Mas gracias
+## Muchas gracias
 Amigos: [MidQwerty](https://github.com/midqwerty-alt)
 
 Compañías: <https://spaceship.com> <https://cloudflare.com> <https://github.com> <https://google.com> <https://chatgpt.com> <https://claude.ai> <https://colocrossing.com>
