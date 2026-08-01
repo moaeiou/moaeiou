@@ -1,5 +1,5 @@
-name: "Preparing build environment"
-description: "Preparing build environment"
+name: Preparing build environment
+description: Preparing build environment
 runs:
   using: "composite"
   steps:

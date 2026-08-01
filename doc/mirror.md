@@ -11,38 +11,26 @@
 https://l.867678.xyz/filename
 ```
 ### 🚗 Bypass CDN
-> If you have no network restrictions, you can force l.867678.xyz to point to the following IP address.
+If you have no network restrictions, you can force `l.867678.xyz` to point to the following IP address.
 ```
 23.95.28.150
 ```
-> Example using wget bypass CDN
+Example using wget bypass CDN
 ```
 wget --no-check-certificate --header="Host: l.867678.xyz" https://23.95.28.150/filename
 ```
-> Aslo can using motrix-next, it is very fast
->
-> <https://github.com/AnInsomniacy/aria2-next> Give it a star!
+Aslo can using motrix-next, it is very fast
+
+<https://github.com/AnInsomniacy/aria2-next> Give it a star!
 ```
 ANV=$(curl -sS -I https://github.com/AnInsomniacy/aria2-next/releases/latest | grep -i '^location:' | grep -oE '[^/]+$' | tr -d '\r' | sed 's/^v//')
 wget -O aria2-next https://github.com/AnInsomniacy/aria2-next/releases/download/v$ANV/aria2-next-$ANV-linux-x86_64
 chmod +x ./aria2-next
 ./aria2-next --max-connection-per-server=64 --split=64 --min-split-size=1M --continue=true --check-certificate=false --header="Host: l.867678.xyz" https://23.95.28.150/filename
 ```
-> Or force reffer IP
+Or force reffer IP
 ```
 sudo -i
 whoami # make sure you as root
 echo "23.95.28.150 l.867678.xyz" >> /etc/hosts
 ```
-## 🙏 Acknowladgements
-<https://cloudflare.com> BTW: I use cloudflare from `Nov 23,2021`!
-
-<https://nginx.org>
-
-<https://kde.org>
-
-<https://www.spaceship.com/>
-
-<https://github.com/AnInsomniacy/aria2-next>
-
-<https://867678.xyz/project/fancyindex-theme>

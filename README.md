@@ -13,7 +13,7 @@
 **El último**: Siempre y rapido en el utilmo, porque me gustas las cosas nuevas.
 
 **Copiar @nekohasekai**: Como me commit siempre llamo **Bump version**, Release Note siempre **Fixes and improvements**. [Detalles](https://x.com/Com0loquieras/status/2083050810976690433)
-## Conexíon
+## Conexión
 [GitHub](https://github.com/moaeiou)
 [WebSite](https://867678.xyz/)
 [Telegram](https://telegram.me/Tortillas111)
@@ -47,6 +47,6 @@ This `me@867678.xyz` email address can only receive messages, not send them; out
 ## Muchas gracias
 Amigos: [MidQwerty](https://github.com/midqwerty-alt)
 
-Compañías: <https://spaceship.com> <https://cloudflare.com> <https://github.com> <https://google.com> <https://chatgpt.com> <https://claude.ai> <https://colocrossing.com>
+Compañías(BTW: I use cloudflare from `2021/11/23`!): <https://spaceship.com> <https://cloudflare.com> <https://github.com> <https://google.com> <https://chatgpt.com> <https://claude.ai> <https://colocrossing.com>
 
 Organizares: <https://nginx.org> <https://kernel.org> <https://kde.org> <https://immortalwrt.org> <https://openwrt.org>

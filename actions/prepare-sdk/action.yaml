@@ -1,16 +1,16 @@
-name: 'Prepare SDK'
-description: 'Unified SDK preparation for multiple architectures'
+name: Prepare SDK
+description: Unified SDK preparation for multiple architectures
 inputs:
   sdk_arch:
-    description: 'The SDK arch name'
+    description: SDK arch name
     required: true
   gcc_version:
-    description: 'The upstream GCC version'
+    description: Upstream GCC version
     required: false
     default: '14.4.0'
 outputs:
   sdk_dir:
-    description: 'The extracted SDK directory name for downstream use'
+    description: Extracted SDK directory name for downstream use
     value: ${{ steps.sdk_dir.outputs.dir_name }}
     
 runs:
