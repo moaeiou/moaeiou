@@ -20,6 +20,7 @@
 [X](https://x.com/Com0loquieras)
 [Spotify](https://open.spotify.com/user/31rmv5v2776nx5kc234ljd55ubnq?si=310578bf5fed45c7)
 [E-Mail:me@867678.xyz](mailto:me@867678.xyz)
+[Donate](https://x.com/Com0loquieras/status/2083748503621362165?s=20)
 ## Descargar
 ### Logo
 [SVG](https://867678.xyz/favicon.svg)
