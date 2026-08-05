@@ -1,15 +1,11 @@
 # 🚀 Tourist of Mirror by MoAEIOU
 ## 🗺 Location/Region?
 We have some mirrors, Addr:
+| Location | Address |
+|  ----  | ----  |
+| Los Angeles, CA, U.S. | `https://l.867678.xyz/` |
+| Cloudflare R2 | `https://r2.867678.xyz/` |
 
-Location: Los Angeles, CA, U.S.
-```
-https://l.867678.xyz/
-```
-Location: Cloudflare R2
-```
-https://r2.867678.xyz/
-```
 ## 💁 How to use?
 Just need change addr from `Original` to `https://l.867678.xyz/` or any others
 
