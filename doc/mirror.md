@@ -56,7 +56,7 @@ Need more fast?
 ANV=$(curl -sS -I https://github.com/AnInsomniacy/aria2-next/releases/latest | grep -i '^location:' | grep -oE '[^/]+$' | tr -d '\r' | sed 's/^v//')
 wget -O aria2-next https://github.com/AnInsomniacy/aria2-next/releases/download/v$ANV/aria2-next-$ANV-linux-x86_64
 chmod +x ./aria2-next
-aria2-next --max-connection-per-server=64 --split=64 --min-split-size=1M --continue=true https://l.867678.xyz/filename
+./aria2-next --max-connection-per-server=64 --split=64 --min-split-size=1M --continue=true https://l.867678.xyz/filename
 ```
 
 ## 🤔 Q&A
@@ -65,6 +65,7 @@ aria2-next --max-connection-per-server=64 --split=64 --min-split-size=1M --conti
 | Time zone | Default UTC+0 |
 | How long to sync | Every 4 hours from 00:00(UTC+0) |
 | What be mirror | Dynamic version programs, binary, SDK. Turn to the URL to view all it mirror. |
+| Are you support new features? | Yes we supported QUIC, TLS1.3, X25519MLKEM768 and most new features. |
 ## 🙏 Acknowledgements
 Server: <https://colocrossing.com> <https://cloudflare.com>
 
