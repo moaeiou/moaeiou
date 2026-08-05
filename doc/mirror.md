@@ -22,7 +22,7 @@ Location: Cloudflare R2
 https://r2.867678.xyz/
 ```
 ## 💁 How to use?
-Just need change addr from `Original` to `https://l.867678.xyz/`
+Just need change addr from `Original` to `https://l.867678.xyz/` or any others
 
 Such as you need to download `https://downloads.openwrt.org/snapshots/targets/x86/64/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst`
 
