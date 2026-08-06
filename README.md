@@ -31,7 +31,7 @@ Copyright 2026 MoAEIOU All rights reserved. Licensed under the [MoPL](https://86
 ### GPG Keys
 This GPG key has been verified at [keys.openpgp.org](https://keys.openpgp.org/search?q=me%40867678.xyz)
 
-GPG Hash(ECC Last Change:2026-07-19): 4983B46224D4B0A3CB4882811331669714CF2BC1 
+GPG Hash(ECC Last Change:2026-07-19): `4983B46224D4B0A3CB4882811331669714CF2BC1`
 
 #### OpenPGP-Revocs
 Go to [Here](https://github.com/moaeiou/moaeiou/tree/main/revocs) to view revoked certificates.
