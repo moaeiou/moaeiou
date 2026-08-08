@@ -20,7 +20,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.CC_LA_Key }}" > ~/.ssh/rw_key
+          echo "${{ secrets.CC_LA_KEY }}" > ~/.ssh/rw_key
           chmod 600 ~/.ssh/rw_key
           ssh-keyscan -p 22 l.867678.xyz >> ~/.ssh/known_hosts
 
