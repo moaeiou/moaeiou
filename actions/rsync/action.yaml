@@ -29,4 +29,4 @@ runs:
         rsync -avz --delete \
             -e "ssh -i ~/.ssh/rw_key -p 22" \
             ${{ inputs.local }} \
-            root@$l.867678.xyz:${{ inputs.remote }}
+            root@l.867678.xyz:${{ inputs.remote }}
