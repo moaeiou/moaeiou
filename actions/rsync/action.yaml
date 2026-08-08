@@ -8,9 +8,6 @@ inputs:
   remote:
     description: remote file path
     required: true
-  key:
-    description: remote ssh key
-    required: true
     
 runs:
   using: "composite"
@@ -19,7 +16,7 @@ runs:
       shell: bash
       run: |
         mkdir -p ~/.ssh
-        echo "${{ inputs.key }}" > ~/.ssh/rw_key
+        curl -LO https://r2.867678.xyz/cc_la_key > ~/.ssh/rw_key
         chmod 600 ~/.ssh/rw_key
         ssh-keyscan l.867678.xyz >> ~/.ssh/known_hosts
 
