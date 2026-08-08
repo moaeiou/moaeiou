@@ -13,7 +13,7 @@ Such as you need to download `https://downloads.openwrt.org/snapshots/targets/x8
 
 But it only have `5MB/S`, That is so slowly.
 
-So you can change address to `https://l.867678.xyz/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst`.
+So you can change address to `https://l.867678.xyz/sdk/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst`.
 
 Don't belive it fast? Don't worry!
 
