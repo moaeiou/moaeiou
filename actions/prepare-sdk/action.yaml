@@ -6,7 +6,7 @@ inputs:
     required: true
   gcc_version:
     description: Upstream GCC version
-    required: false
+    required: true
     default: '14.4.0'
 outputs:
   sdk_dir:
