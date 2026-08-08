@@ -1,0 +1,37 @@
+name: Syncer
+
+on:
+  workflow_call:
+    inputs:
+      local:
+        description: local file/dir path
+        required: true
+        type: string
+      remote:
+        description: remote file/dir path
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    environment: ${{ inputs.server }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Setup SSH
+        shell: bash
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.CC_LA_Key }}" > ~/.ssh/rw_key
+          chmod 600 ~/.ssh/rw_key
+          ssh-keyscan -p 22 l.867678.xyz >> ~/.ssh/known_hosts
+
+      - name: Conexion
+        shell: bash
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/rw_key -p 22" \
+            ${{ inputs.local }} \
+            root@l.867678.xyz:${{ inputs.remote }}
