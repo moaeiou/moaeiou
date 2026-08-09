@@ -4,7 +4,6 @@ We have some mirrors, Addr:
 | Location | Address |
 |  ----  | ----  |
 | Los Angeles, CA, U.S. | `https://l.867678.xyz/` |
-| Cloudflare R2 | `https://r2.867678.xyz/` |
 
 ## 💁 How to use?
 Just need change addr from `Original` to `https://l.867678.xyz/` or any others
@@ -61,7 +60,8 @@ chmod +x ./aria2-next
 | Time zone | Default UTC+0 |
 | How long to sync | Every 4 hours from 00:00(UTC+0) |
 | What be mirror | Dynamic version programs, binary, SDK. Turn to the URL to view all it mirror. |
-| Are you support new features? | Yes we supported QUIC, TLS1.3, X25519MLKEM768 and most new features. |
+| Are you support new features? | Yes, we supported QUIC, TLS1.3, X25519MLKEM768 and most new features. |
+| Are you support rsync? | Yes, we testing it. Maybe after sometimes it will be release. |
 ## 🙏 Acknowledgements
 Server: <https://colocrossing.com> <https://cloudflare.com>
 
