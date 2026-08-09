@@ -1,5 +1,5 @@
 name: Syncer
-description: Sync file to mirror in Los Angeles
+description: Sync file to mirror
 
 inputs:
   local:
@@ -11,6 +11,9 @@ inputs:
   key:
     description: remote host key
     required: true
+  extra:
+    description: provide extra arguments to rsync.
+    required: false
     
 runs:
   using: "composite"
@@ -26,4 +29,4 @@ runs:
     - name: Conexionario
       shell: bash
       run: |
-        rsync -avzh --progress --delete -e "ssh -i ~/.ssh/rw_key -p 22" ${{ inputs.local }} root@l.867678.xyz:${{ inputs.remote }}
+        rsync ${{ inputs.extra }} -avzh --progress -e "ssh -i ~/.ssh/rw_key -p 22" ${{ inputs.local }} root@l.867678.xyz:${{ inputs.remote }}
