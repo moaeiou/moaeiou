@@ -19,9 +19,7 @@ runs:
       shell: bash
       run: |
         mkdir -p ~/.ssh
-        cat << 'EOF' > ~/.ssh/rw_key
-        $SSH_KEY
-        EOF
+        echo "${{ inputs.key }} | base64 -d >> ~/.ssh/rw_key
         chmod 600 ~/.ssh/rw_key
         ssh-keyscan l.867678.xyz >> ~/.ssh/known_hosts
 
