@@ -1,11 +1,15 @@
 # 🚀 Tourist of Mirror by MoAEIOU
+
 ## 🗺 Location/Region?
+
 We have some mirrors, Addr:
+
 | Location | Address |
 |  ----  | ----  |
 | Los Angeles, CA, U.S. | `https://l.867678.xyz/` |
 
 ## 💁 How to use?
+
 Just need change addr from `Original` to `https://l.867678.xyz/` or any others
 
 Such as you need to download `https://downloads.openwrt.org/snapshots/targets/x86/64/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst`
@@ -53,8 +57,27 @@ wget -O aria2-next https://github.com/AnInsomniacy/aria2-next/releases/download/
 chmod +x ./aria2-next
 ./aria2-next --max-connection-per-server=64 --split=64 --min-split-size=1M --continue=true https://l.867678.xyz/filename
 ```
+Rsync
+
+GitHub Actions
+```yaml
+- name: Send to mirror
+  uses: moaeiou/moaeiou/actions/rsync@main
+  with:
+    local: ${{ steps.sdk.outputs.sdk_dir }}/bin/packages/x86_64/base/
+    remote: /var/www/html/luci-app/pm/
+    key: ${{ secrets.CC_LA_KEY }}
+    extra: --delete
+```
+
+Level 2 Mirror(Sync from Level 1)
+
+```bash
+# Comming Soon
+```
 
 ## 🤔 Q&A
+
 | Question | Anwser |
 |  ----  | ----  |
 | Time zone | Default UTC+0 |
@@ -62,9 +85,11 @@ chmod +x ./aria2-next
 | What be mirror | Dynamic version programs, binary, SDK. Turn to the URL to view all it mirror. |
 | Are you support new features? | Yes, we supported QUIC, TLS1.3, X25519MLKEM768 and most new features. |
 | Are you support rsync? | Yes, we testing it. Maybe after sometimes it will be release. |
+
 ## 🙏 Acknowledgements
-Server: <https://colocrossing.com> <https://cloudflare.com>
 
-Software: <https://nginx.org> <https://github.com/AnInsomniacy/aria2-next> <https://867678.xyz/project/fancyindex-theme>
+Server、CDN、Domain: <https://colocrossing.com> <https://cloudflare.com> <https://spaceship.com>
 
-Donate: <https://github.com/midqwerty-alt>
+Software: <https://nginx.org> <https://rsync.samba.org> <https://github.com/AnInsomniacy/aria2-next> <https://867678.xyz/project/fancyindex-theme>
+
+Server Donate: <https://github.com/midqwerty-alt> <https://github.com/muchengrui110-source>
