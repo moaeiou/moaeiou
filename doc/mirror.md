@@ -34,7 +34,7 @@ gid   |stat|avg speed  |path/URI
 ======+====+===========+=======================================================
 2eb2f2|OK  |    82MiB/s|/home/runner/work/moaeiou/moaeiou/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst
 ```
-But Action at:
+But the runner at:
 ```bash
 {
   "ip": "52.159.244.162",
@@ -48,15 +48,15 @@ But Action at:
   "readme": "https://ipinfo.io/missingauth"
 }
 ```
-Yes.
 
 Need more fast?
 ```bash
 ANV=$(curl -sS -I https://github.com/AnInsomniacy/aria2-next/releases/latest | grep -i '^location:' | grep -oE '[^/]+$' | tr -d '\r' | sed 's/^v//')
 wget -O aria2-next https://github.com/AnInsomniacy/aria2-next/releases/download/v$ANV/aria2-next-$ANV-linux-x86_64
 chmod +x ./aria2-next
-./aria2-next --max-connection-per-server=64 --split=64 --min-split-size=1M --continue=true https://l.867678.xyz/filename
+./aria2-next --max-connection-per-server=1024 --split=88 --min-split-size=1M --continue=true https://l.867678.xyz/filename
 ```
+
 Rsync
 
 GitHub Actions
