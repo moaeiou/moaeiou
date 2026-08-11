@@ -5,7 +5,7 @@
 We have some mirrors, Addr:
 
 | Location | Address | Note |
-|  ----  | ----  |
+|  ----  | ----  | ---- |
 | Los Angeles, CA, U.S. | `https://l.867678.xyz/` | Tier 1 Mirror and not support IPV6 |
 | Singapore | `https://s.867678.xyz/` | Tier 2 Mirror, Every 2 hours sync 1 time |
 | Tokyo, Japan | `https://o.867678.xyz/` | Tier 2 Mirror, Every 2 hours sync 1 time |
