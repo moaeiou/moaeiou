@@ -67,7 +67,7 @@ GitHub Actions
   uses: moaeiou/moaeiou/actions/rsync@main
   with:
     local: ${{ steps.sdk.outputs.sdk_dir }}/bin/packages/x86_64/base/
-    remote: /var/www/html/luci-app/pm/
+    remote: /var/www/html/
     key: ${{ secrets.CC_LA_KEY }}
     extra: --delete
 ```
