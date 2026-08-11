@@ -4,9 +4,11 @@
 
 We have some mirrors, Addr:
 
-| Location | Address |
+| Location | Address | Note |
 |  ----  | ----  |
-| Los Angeles, CA, U.S. | `https://l.867678.xyz/` |
+| Los Angeles, CA, U.S. | `https://l.867678.xyz/` | Tier 1 Mirror and not support IPV6 |
+| Singapore | `https://s.867678.xyz/` | Tier 2 Mirror, Every 2 hours sync 1 time |
+| Tokyo, Japan | `https://o.867678.xyz/` | Tier 2 Mirror, Every 2 hours sync 1 time |
 
 ## 💁 How to use?
 
@@ -70,11 +72,13 @@ GitHub Actions
     extra: --delete
 ```
 
-Level 2 Mirror(Sync from Level 1)
+Sync from this mirrors to your mirror
 
 ```bash
-# Comming Soon
+rsync -avz --exclude 'contento24/' rsync://l.867678.xyz/sync/ /path/to/your/mirror
 ```
+
+Aslo can try Mirror level 2
 
 ## 🤔 Q&A
 
