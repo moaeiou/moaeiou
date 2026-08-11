@@ -31,7 +31,7 @@ OR any package manager you using.
 You have three choices
 [All the mirrors of OpenWrt](https://openwrt.org/mirrors)
 [All the mirrors of ImmortalWrt](https://downloads.immortalwrt.org/acknowledgements.html)
-[Mirror by MoAEIOU](https://867678.xyz/doc/mirrors)
+[Mirror by MoAEIOU](https://867678.xyz/docs/mirrors)
 
 ```bash
 wget ⚠️[SDK URL]
@@ -72,4 +72,4 @@ make package/⚠️project_name/compile V=s -j$(nproc)
 
 # ⚖️ License
 
-This document was licensed under the [MoPL](https://867678.xyz/doc/mopl)
+This document was licensed under the [MoPL](https://867678.xyz/docs/mopl)

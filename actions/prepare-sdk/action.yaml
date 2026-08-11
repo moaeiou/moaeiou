@@ -7,12 +7,12 @@ inputs:
   gcc_version:
     description: Upstream GCC version
     required: true
-    default: '14.4.0'
+    default: "14.4.0"
 outputs:
   sdk_dir:
     description: Extracted SDK directory name for downstream use
     value: ${{ steps.sdk_dir.outputs.dir_name }}
-    
+
 runs:
   using: "composite"
   steps:
@@ -21,12 +21,12 @@ runs:
       shell: bash
       run: |
         echo "dir_name=openwrt-sdk-${{ inputs.sdk_arch }}_gcc-${{ inputs.gcc_version }}_musl.Linux-x86_64" >> $GITHUB_OUTPUT
-        
+
     - name: Download and Initialize SDK
       shell: bash
       run: |
         set -e
-        
+
         ANV=$(curl -sS -I https://github.com/AnInsomniacy/aria2-next/releases/latest | grep -i '^location:' | grep -oE '[^/]+$' | tr -d '\r' | sed 's/^v//')
         wget -O aria2-next https://github.com/AnInsomniacy/aria2-next/releases/download/v$ANV/aria2-next-$ANV-linux-x86_64
         chmod +x ./aria2-next

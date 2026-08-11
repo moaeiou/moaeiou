@@ -33,7 +33,7 @@
 
 [Orgmio PNG](https://cdn.jsdelivr.net/gh/moaeiou/moaeiou@main/logos/moaeiou.png)
 
-Copyright 2026 MoAEIOU All rights reserved. Licensed under the [MoPL](https://867678.xyz/doc/mopl)
+Logo:Copyright 2026 MoAEIOU All rights reserved. Licensed under the [MoPL](https://867678.xyz/docs/mopl)
 
 ### GPG Keys
 

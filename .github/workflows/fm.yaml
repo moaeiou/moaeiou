@@ -5,21 +5,21 @@ on:
   push:
 
 permissions:
-  contents: read
+  contents: write
 
-jobs: 
+jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Preparing build environment
         uses: moaeiou/moaeiou/actions/build-env@main
-        
+
       - name: Prepare SDK
         uses: moaeiou/moaeiou/actions/prepare-sdk@main
         with:
           sdk_arch: "x86-64"
-        
+
       - name: Fuck Microsoft Azure!
         shell: bash
         run: |

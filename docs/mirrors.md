@@ -1,5 +1,15 @@
 # 🚀 Tourist of Mirror by MoAEIOU
 
+## 🤔 Q&A
+
+| Question | Anwser |
+|  ----  | ----  |
+| Time zone | Default UTC+0 |
+| How long to sync | Every 4 hours from 00:00(UTC+0) |
+| What be mirror | Dynamic version programs, binary, SDK. Turn to the URL to view all it mirror. |
+| Are you support new features? | Yes, we supported QUIC, TLS1.3, X25519MLKEM768 and most new features. |
+| Are you support rsync? | Yes, it has been released. |
+
 ## 🗺 Location/Region?
 
 We have some mirrors, Addr:
@@ -80,20 +90,20 @@ rsync -avz --exclude 'contento24/' rsync://l.867678.xyz/sync/ /path/to/your/mirr
 
 Aslo can try Mirror level 2
 
-## 🤔 Q&A
-
-| Question | Anwser |
-|  ----  | ----  |
-| Time zone | Default UTC+0 |
-| How long to sync | Every 4 hours from 00:00(UTC+0) |
-| What be mirror | Dynamic version programs, binary, SDK. Turn to the URL to view all it mirror. |
-| Are you support new features? | Yes, we supported QUIC, TLS1.3, X25519MLKEM768 and most new features. |
-| Are you support rsync? | Yes, we testing it. Maybe after sometimes it will be release. |
+And option: `--delete` that 1:1 sync any changes from upstream
 
 ## 🙏 Acknowledgements
 
 Server、CDN、Domain: <https://colocrossing.com> <https://cloudflare.com> <https://spaceship.com>
 
-Software: <https://nginx.org> <https://rsync.samba.org> <https://github.com/AnInsomniacy/aria2-next> <https://867678.xyz/project/fancyindex-theme>
+Software: <https://nginx.org> <https://github.com/RsyncProject/rsync> <https://github.com/AnInsomniacy/aria2-next> <https://867678.xyz/projects/fancyindex-theme>
 
 Server Donate: <https://github.com/midqwerty-alt> <https://github.com/muchengrui110-source>
+
+## ⚖️ LICENSE
+
+Rsync was licensed under the GPL-v3
+
+And mirrors servers using Debian GNU/Linux lisenced under the GPL-v2
+
+Mirrored files using their self open source license, it just a file server.
