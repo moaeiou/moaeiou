@@ -4,10 +4,12 @@
 
 [GitHub](https://github.com/moaeiou)
 [WebSite](https://867678.xyz/)
+[E-Mail:me@867678.xyz](mailto:me@867678.xyz)
+
 [Telegram](https://telegram.me/Tortillas111)
 [X y introduccion](https://x.com/Com0loquieras)
 [Spotify](https://open.spotify.com/user/31rmv5v2776nx5kc234ljd55ubnq?si=310578bf5fed45c7)
-[E-Mail:me@867678.xyz](mailto:me@867678.xyz)
+
 [Donate](https://x.com/Com0loquieras/status/2083748503621362165?s=20)
 [Nuevo](https://x.com/Com0loquieras/status/2083050810976690433)
 
