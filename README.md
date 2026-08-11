@@ -12,7 +12,9 @@
 ## Estilo
 **El último**: Siempre y rapido en el utilmo, porque me gustas las cosas nuevas.
 
-**Copiar @nekohasekai**: Como me commit siempre llamo **Bump version**, Release Note siempre **Fixes and improvements**. [Detalles](https://x.com/Com0loquieras/status/2083050810976690433)
+**Copiar sing-box**: Como me commit siempre llamo **Bump version**, Release Note siempre **Fixes and improvements**. 
+
+[Detalles](https://x.com/Com0loquieras/status/2083050810976690433)
 ## Conexión
 [GitHub](https://github.com/moaeiou)
 [WebSite](https://867678.xyz/)
