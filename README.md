@@ -54,8 +54,6 @@ This `any@867678.xyz` email address can only receive messages, not send them; ou
 
 ## Muchas gracias
 
-Amigos: [MidQwerty](https://github.com/midqwerty-alt)
-
 Compañías(BTW: I use cloudflare from `2021/11/23`!): <https://spaceship.com> <https://cloudflare.com> <https://github.com> <https://google.com> <https://chatgpt.com> <https://claude.ai> <https://colocrossing.com>
 
 Organizares: <https://nginx.org> <https://kernel.org> <https://kde.org> <https://immortalwrt.org> <https://openwrt.org>
