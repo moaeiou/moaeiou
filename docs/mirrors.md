@@ -85,7 +85,7 @@ GitHub Actions
 Sync from this mirrors to your mirror
 
 ```bash
-rsync -avz --exclude 'contento24/' rsync://l.867678.xyz/sync/ /path/to/your/mirror
+rsync -avz --exclude 'contento24/' --exclude './speedtest' rsync://l.867678.xyz/sync/ /path/to/your/mirror
 ```
 
 Aslo can try Mirror level 2
