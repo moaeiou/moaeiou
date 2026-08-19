@@ -14,11 +14,11 @@
 [Donate](https://x.com/Com0loquieras/status/2083748503621362165?s=20)
 [Por que](https://x.com/Com0loquieras/status/2083050810976690433)
 
-## información para mi GitHub
+## GitHub Información
 
 ![GitHub Stats](https://camo.githubusercontent.com/c4b1e1c6c43f2dedf0b2614bb4ce998c7f60612669b912739bbce9537ae87201/68747470733a2f2f6769746875622d73746174732d657874656e6465642e76657263656c2e6170702f6170693f757365726e616d653d6d6f6165696f752673686f775f69636f6e733d7472756526696e636c7564655f616c6c5f636f6d6d6974733d74727565)
 
-## Mis habilidades
+## Habilidades
 
 ![Skills](https://skillicons.dev/icons?i=nginx,astro,vite,html,css,typescript,javascript,php,docker,mysql,pnpm,golang,cpp,cs,git,github,cloudflare,workers,gmail,linux,arch,debian,ubuntu)
 
@@ -26,15 +26,15 @@
 
 ### Logo
 
+Copyright MoAEIOU All rights reserved. Licensed under the [MoPL](https://867678.xyz/docs/mopl)
+
 [SVG](https://cdn.jsdelivr.net/gh/moaeiou/moaeiou@main/logos/favicon.svg)
 [PNG](https://cdn.jsdelivr.net/gh/moaeiou/moaeiou@main/logos/moaeiou.png)
 [KRA](https://cdn.jsdelivr.net/gh/moaeiou/moaeiou@main/logos/moaeiou.kra)
 
 ### Org
 
-[Orgmio PNG](https://cdn.jsdelivr.net/gh/moaeiou/moaeiou@main/logos/moaeiou.png)
-
-Logo:Copyright 2026 MoAEIOU All rights reserved. Licensed under the [MoPL](https://867678.xyz/docs/mopl)
+[orgmio PNG](https://cdn.jsdelivr.net/gh/moaeiou/moaeiou@main/logos/orgmio.png)
 
 ### GPG Keys
 
@@ -42,15 +42,11 @@ This GPG key has been verified at [keys.openpgp.org](https://keys.openpgp.org/se
 
 GPG Hash(ECC Last Change:2026-07-19): `4983B46224D4B0A3CB4882811331669714CF2BC1`
 
-#### OpenPGP-Revocs
+> Revoked certificates
 
-Go to [Here](https://github.com/moaeiou/moaeiou/tree/main/revocs) to view revoked certificates.
+[Here](https://github.com/moaeiou/moaeiou/tree/main/revocs) to view revoked certificates.
 
-Revoked certificates:
-
-`F6CAA8CFEC4145974398DF631CEDB8D3CB4CC7BE`
-
-This `any@867678.xyz` email address can only receive messages, not send them; outgoing messages are usually sent from `teamo20080406@gmail.com`.
+Revoked certificates: `F6CAA8CFEC4145974398DF631CEDB8D3CB4CC7BE`
 
 ## Muchas gracias
 
