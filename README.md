@@ -38,7 +38,7 @@ Copyright MoAEIOU All rights reserved. Licensed under the [MoPL](https://867678.
 
 ### GPG Keys
 
-This GPG key has been verified at [keys.openpgp.org](https://keys.openpgp.org/search?q=me%40867678.xyz)
+This GPG key has been verified at [keys.openpgp.org](https://keys.openpgp.org/search?q=5E54260597C626B728033C4FA8AD61D8CF82E315)
 
 GPG Hash(ECC Last Change:2026-08-24): `5E54260597C626B728033C4FA8AD61D8CF82E315`
 
