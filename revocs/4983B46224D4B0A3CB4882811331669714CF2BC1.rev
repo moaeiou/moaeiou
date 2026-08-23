@@ -17,7 +17,7 @@ uid          MoAEIOU <me@867678.xyz>
 5 个短横线之前。在导入和发布此吊销证书之前，请使用一个
 文本编辑器来移除此冒号。
 
-:-----BEGIN PGP PUBLIC KEY BLOCK-----
+-----BEGIN PGP PUBLIC KEY BLOCK-----
 Comment: This is a revocation certificate
 
 iHgEIBYKACAWIQRJg7RiJNSwo8tIgoETMWaXFM8rwQUCalxjqAIdAAAKCRATMWaX
