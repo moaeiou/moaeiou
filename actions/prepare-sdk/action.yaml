@@ -30,7 +30,7 @@ runs:
         ANV=$(curl -sS -I https://github.com/AnInsomniacy/aria2-next/releases/latest | grep -i '^location:' | grep -oE '[^/]+$' | tr -d '\r' | sed 's/^v//')
         wget -O aria2-next https://github.com/AnInsomniacy/aria2-next/releases/download/v$ANV/aria2-next-$ANV-linux-x86_64
         chmod +x ./aria2-next
-        ./aria2-next --max-connection-per-server=1024 --split=88 --min-split-size=1M --continue=true https://l.867678.xyz/sdk/${{ steps.sdk_dir.outputs.dir_name }}.tar.zst
+        ./aria2-next --stream-max-connections=88 --split=88 --min-split-size=1M --continue=true https://l.867678.xyz/sdk/${{ steps.sdk_dir.outputs.dir_name }}.tar.zst
 
         tar -xvf ${{ steps.sdk_dir.outputs.dir_name }}.tar.zst
         rm ${{ steps.sdk_dir.outputs.dir_name }}.tar.zst
