@@ -60,14 +60,6 @@ But the runner at:
 }
 ```
 
-Need more fast?
-```bash
-ANV=$(curl -sS -I https://github.com/AnInsomniacy/aria2-next/releases/latest | grep -i '^location:' | grep -oE '[^/]+$' | tr -d '\r' | sed 's/^v//')
-wget -O aria2-next https://github.com/AnInsomniacy/aria2-next/releases/download/v$ANV/aria2-next-$ANV-linux-x86_64
-chmod +x ./aria2-next
-./aria2-next --max-connection-per-server=1024 --split=88 --min-split-size=1M --continue=true https://l.867678.xyz/filename
-```
-
 Rsync
 
 GitHub Actions
@@ -84,7 +76,7 @@ GitHub Actions
 Sync from this mirrors to your mirror
 
 ```bash
-rsync -avz --exclude 'contento24/' --exclude './speedtest' rsync://l.867678.xyz/sync/ /path/to/your/mirror
+rsync -avz --exclude='contento24/' --exclude='fancyindex-theme/' --exclude='speedtest' --delete rsync://l.867678.xyz/sync/ /var/www/html/
 ```
 
 Aslo can try Mirror level 2
