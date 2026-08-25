@@ -8,6 +8,9 @@ inputs:
   remote:
     description: remote file path
     required: true
+  key:
+    description: remote host key
+    required: true
   extra:
     description: extra arguments
     required: false
