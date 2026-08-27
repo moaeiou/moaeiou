@@ -22,7 +22,7 @@ jobs:
         shell: bash
         run: |
           pacman -Syu --noconfirm
-          pacman -S --needed --noconfirm base-devel openssh rsync
+          pacman -S --needed --noconfirm base-devel
           mv .github/mn/PKGBUILD ./PKGBUILD
           mv .github/mn/LICENSE ./LICENSE
           source PKGBUILD
@@ -51,10 +51,3 @@ jobs:
             - Fixes and improvements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Send to mirror
-        uses: moaeiou/moaeiou/actions/rsync@main
-        with:
-          local: ./*.pkg.tar.zst
-          remote: /var/www/html/motrix-next/
-          key: ${{ secrets.SSH_KEY }}
