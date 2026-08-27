@@ -1,0 +1,117 @@
+name: Just fuck nekohasekai
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'
+  push:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  Binary:
+    name: Build sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - nickname: "linux-amd64v4-glibc-server"
+            branch: "testing"
+            extra: "GOAMD64=v4"
+            tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
+          - nickname: "linux-amd64v3-glibc-server"
+            branch: "testing"
+            extra: "GOAMD64=v3"
+            tag: "with_quic with_utls with_acme with_wireguard tfogo_checklinkname0 badlinkname"
+          - nickname: "linux-amd64v2-glibc-server"
+            branch: "testing"
+            extra: "GOAMD64=v2"
+            tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
+          - nickname: "linux-amd64-musl-server"
+            branch: "testing"
+            extra: "CGO_ENABLED=0"
+            tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
+          - nickname: "linux-arm64-musl-server"
+            branch: "testing"
+            extra: "CGO_ENABLED=0 GOARCH=arm64"
+            tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
+          - nickname: "linux-amd64v4-glibc-v2rayN"
+            branch: "stable"
+            extra: "GOAMD64=v4"
+            tag: "with_quic with_wireguard with_utls with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
+          - nickname: "linux-amd64v3-glibc-v2rayN"
+            branch: "stable"
+            extra: "GOAMD64=v3"
+            tag: "with_quic with_wireguard with_utls with_acme with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
+          - nickname: "linux-amd64v2-glibc-v2rayN"
+            branch: "stable"
+            extra: "GOAMD64=v2"
+            tag: "with_quic with_wireguard with_utls with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
+          - nickname: "linux-amd64v1-glibc-v2rayN"
+            branch: "stable"
+            extra: "GOAMD64=v1"
+            tag: "with_quic with_wireguard with_utls with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
+          - nickname: "darwin-arm64-v2rayN"
+            branch: "stable"
+            extra: "GOOS=darwin GOARCH=arm64"
+            tag: "with_quic with_wireguard with_utls with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+    
+      - name: Clone sing-box Source Code
+        shell: bash
+        run: |
+          git clone --branch ${{ matrix.branch }} https://github.com/SagerNet/sing-box.git
+          cd sing-box
+          git pull
+          git fetch --tags --force
+
+      - name: Set up Go
+        uses: actions/setup-go@main
+        with:
+          go-version: 'stable'
+
+      - name: Update depends
+        if: matrix.branch == 'testing'
+        shell: bash
+        run: |
+          cd sing-box
+          go get -u ./...
+
+      - name: Patch Golang 1.27
+        shell: bash
+        run: |
+          mv sb/patch-go1.27.sh sing-box/patch-go1.27.sh
+          cd sing-box/
+          chmod +x ./patch-go1.27.sh
+          ./patch-go1.27.sh
+          
+      - name: Build!
+        shell: bash
+        run: |
+          cd sing-box
+          go mod tidy
+          go fmt ./...
+          sed -i 's/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) go run/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) GOAMD64= go run/' ./Makefile
+          VALE=$(go run github.com/sagernet/sing-box/cmd/internal/read_tag@latest)
+          ${{ matrix.extra }} TAGS="${{ matrix.tag }}" VERSION=$VALE make -j$(nproc)
+          mv ./sing-box ./sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
+
+      - name: Release
+        uses: softprops/action-gh-release@master
+        with:
+          tag_name: sing-box
+          files: sing-box/sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
+          body:
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Send to mirror
+        uses: moaeiou/moaeiou/actions/rsync@main
+        with:
+          local: sing-box/sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
+          remote: /var/www/html/sing-box/
+          key: ${{ secrets.SSH_KEY }}
+          
