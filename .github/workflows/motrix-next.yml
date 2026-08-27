@@ -22,7 +22,7 @@ jobs:
         shell: bash
         run: |
           pacman -Syu --noconfirm
-          pacman -S --needed --noconfirm base-devel
+          pacman -S --needed --noconfirm base-devel openssh
           mv .github/mn/PKGBUILD ./PKGBUILD
           mv .github/mn/LICENSE ./LICENSE
           source PKGBUILD
