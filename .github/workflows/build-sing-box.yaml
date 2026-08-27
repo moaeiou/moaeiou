@@ -83,7 +83,7 @@ jobs:
       - name: Patch Golang 1.27
         shell: bash
         run: |
-          mv sb/patch-go1.27.sh sing-box/patch-go1.27.sh
+          mv .github/sb/patch-go1.27.sh sing-box/patch-go1.27.sh
           cd sing-box/
           chmod +x ./patch-go1.27.sh
           ./patch-go1.27.sh
@@ -114,4 +114,3 @@ jobs:
           local: sing-box/sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
           remote: /var/www/html/sing-box/
           key: ${{ secrets.SSH_KEY }}
-          
