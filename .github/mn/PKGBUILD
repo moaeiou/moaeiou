@@ -1,8 +1,8 @@
 # Maintainer: MoAEIOU
 
 pkgname=motrix-next
-_pkgver_gh=3.9.8-beta.8
-pkgver=3.9.8_beta.8
+_pkgver_gh=3.9.8-beta.9
+pkgver=3.9.8_beta.9
 pkgrel=1
 pkgdesc="A full-featured download manager rebuilt with Tauri 2, Vue 3, and Rust (tracks latest upstream release, including pre-releases)"
 arch=(x86_64)
@@ -24,17 +24,12 @@ source=(
 sha256sums=('SKIP' 'SKIP')
 
 prepare() {
-    # The .deb is an ar archive; pull data.tar.gz out of it so package()
-    # can extract it directly. makepkg does not do this step for us.
     local debfile="$pkgname-$pkgver-$CARCH.deb"
     ar x "$debfile" data.tar.gz
 }
 
 package() {
-    # Extract the contents of data.tar.gz into the pkgdir itself
     tar -xf data.tar.gz -C "$pkgdir"
-
-    # Fix empty Categories so KDE launcher displays the app
     sed -i '/^Categories=/c\Categories=Network;FileTransfer;' \
         "$pkgdir/usr/share/applications/MotrixNext.desktop"
 
