@@ -1,6 +1,6 @@
 # Maintainer: MoAEIOU
 
-pkgname=motrix-next-bin
+pkgname=motrix-next
 _pkgver_gh=3.9.8-beta.8
 pkgver=3.9.8_beta.8
 pkgrel=1
