@@ -19,9 +19,7 @@ jobs:
         id: version
         shell: bash
         run: |
-          mv .github/mn/checker.sh
-          chmod +x checker.sh
-          ./checker.sh
+          .github/mn/checker.sh
           source version_check_result.env
           echo "changed=$CHANGED" >> "$GITHUB_OUTPUT"
           if [ "$CHANGED" = "true" ]; then
