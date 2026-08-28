@@ -8,37 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  bump:
-    runs-on: ubuntu-latest
-    name: On My time
-    steps:
-      - name: Checkout
-        uses: actions/checkout@main
-
-      - name: Version checker
-        id: version
-        shell: bash
-        run: |
-          cd .github/mn/
-          ./checker.sh
-          source version_check_result.env
-          echo "changed=$CHANGED" >> "$GITHUB_OUTPUT"
-          if [ "$CHANGED" = "true" ]; then
-            echo "new_tag=$NEW_TAG" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Update PKGBUILD
-        if: steps.version.outputs.changed == 'true'
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add "$PKG_DIR/PKGBUILD"
-          git commit -m "Bump PKGBUILD version"
-          git push
-
   build:
-    needs: bump
     runs-on: ubuntu-latest
     name: Fuck Motrix-Next!
     container:
