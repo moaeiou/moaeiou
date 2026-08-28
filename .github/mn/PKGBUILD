@@ -1,9 +1,17 @@
 # Maintainer: Luis Martinez <luis dot martinez at disroot dot org>
+#
+# Tracks whichever release is newest upstream — stable or pre-release —
+# via .github/workflows/build.yml + check_update.py. Do not hand-edit
+# pkgver/_pkgver_gh; the workflow rewrites them automatically.
 
-pkgname=motrix-next
+pkgname=motrix-next-bin
+# _pkgver_gh holds the raw upstream tag (may contain a hyphen, e.g.
+# "3.9.8-beta.6"); pkgver is the Arch-safe sanitized form (hyphen -> _).
+# Both are kept in sync by check_update.py on every scheduled run.
+_pkgver_gh=3.9.7
 pkgver=3.9.7
-pkgrel=3
-pkgdesc="A full-featured download manager rebuilt with Tauri 2, Vue 3, and Rust"
+pkgrel=1
+pkgdesc="A full-featured download manager rebuilt with Tauri 2, Vue 3, and Rust (tracks latest upstream release, including pre-releases)"
 arch=(x86_64)
 url="https://github.com/AnInsomniacy/motrix-next"
 license=(MIT)
@@ -17,21 +25,25 @@ depends=(
     webkit2gtk-4.1
 )
 source=(
-    "LICENSE"
-    "$pkgname-$pkgver-x86_64.deb::$url/releases/download/v$pkgver/MotrixNext_${pkgver}_amd64.deb"
+    "LICENSE-MIT"
+    "$pkgname-$pkgver-x86_64.deb::$url/releases/download/v$_pkgver_gh/MotrixNext_${_pkgver_gh}_amd64.deb"
 )
 sha256sums=('SKIP' 'SKIP')
 
 prepare() {
+    # The .deb is an ar archive; pull data.tar.gz out of it so package()
+    # can extract it directly. makepkg does not do this step for us.
     local debfile="$pkgname-$pkgver-$CARCH.deb"
     ar x "$debfile" data.tar.gz
 }
 
 package() {
+    # Extract the contents of data.tar.gz into the pkgdir itself
     tar -xf data.tar.gz -C "$pkgdir"
 
+    # Fix empty Categories so KDE launcher displays the app
     sed -i '/^Categories=/c\Categories=Network;FileTransfer;' \
         "$pkgdir/usr/share/applications/MotrixNext.desktop"
 
-    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    install -Dm644 LICENSE-MIT "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
