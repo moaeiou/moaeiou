@@ -41,7 +41,7 @@ jobs:
         shell: bash
         run: |
           su builder -c "cd '$GITHUB_WORKSPACE' && makepkg -s --noconfirm --needed"
-          rm ./motrix-next-bin-debug*
+          rm ./motrix-next-debug*
 
       - name: Release
         uses: softprops/action-gh-release@master
