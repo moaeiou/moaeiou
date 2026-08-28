@@ -41,12 +41,14 @@ jobs:
         shell: bash
         run: |
           su builder -c "cd '$GITHUB_WORKSPACE' && makepkg -s --noconfirm --needed"
+          rm ./motrix-next-bin-debug*
+          mv ./motrix-next-bin-* ./motrix-next-bin-x86_64.pkg.tar.zst
 
       - name: Release
         uses: softprops/action-gh-release@master
         with:
           tag_name: motrix-next
-          files: ./*.pkg.tar.zst
+          files: ./motrix-next-bin-x86_64.pkg.tar.zst
           body: |
             # 📝 Release Notes
             - Fixes and improvements
