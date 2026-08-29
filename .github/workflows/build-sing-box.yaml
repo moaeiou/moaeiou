@@ -72,14 +72,6 @@ jobs:
         uses: actions/setup-go@main
         with:
           go-version: 'stable'
-
-      - name: Patch Golang to 1.27
-        shell: bash
-        run: |
-          mv .github/sb/patch-go1.27.sh sing-box/patch-go1.27.sh
-          cd sing-box/
-          chmod +x ./patch-go1.27.sh
-          ./patch-go1.27.sh
           
       - name: Build!
         shell: bash
