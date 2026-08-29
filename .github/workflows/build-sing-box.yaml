@@ -73,14 +73,7 @@ jobs:
         with:
           go-version: 'stable'
 
-      - name: Update depends
-        if: matrix.branch == 'testing'
-        shell: bash
-        run: |
-          cd sing-box
-          go get -u ./...
-
-      - name: Patch Golang 1.27
+      - name: Patch Golang to 1.27
         shell: bash
         run: |
           mv .github/sb/patch-go1.27.sh sing-box/patch-go1.27.sh
