@@ -1,4 +1,4 @@
-name: Package Motrix Next
+name: Hating you is overrated
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Fuck Motrix-Next!
+    name: Unless you understand it
     container:
       image: archlinux:latest
       options: --privileged
