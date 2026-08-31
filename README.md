@@ -1,5 +1,11 @@
 # 👋Hola, Soy MoAEIOU
 
+After 3 or 4 months , this account will not push new huge update. Only fixes and depends updates.
+
+That because I need to learn more skill like Go, Flutter or any something.
+
+Good luck for me , see you 2027.
+
 ## Conexión
 
 [GitHub](https://github.com/moaeiou)
