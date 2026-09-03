@@ -33,7 +33,7 @@ jobs:
             tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
           - nickname: "linux-arm64v9-glibc-server"
             branch: "testing"
-            extra: "CGO_ENABLED=1 GOARCH=arm64 GOARM64=v9.0"
+            extra: "CC=aarch64-linux-gnu-gcc CGO_ENABLED=1 GOARCH=arm64 GOARM64=v9.0"
             tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
           - nickname: "linux-arm64v8.2-musl-server"
             branch: "testing"
@@ -84,13 +84,12 @@ jobs:
         uses: actions/setup-go@main
         with:
           go-version: 'stable'
-          
+      
       - name: Build!
         shell: bash
         run: |
           cd sing-box
           go mod tidy
-          go get -u ./...
           sudo apt update
           sudo apt install -y gcc-aarch64-linux-gnu libc6-dev-arm64-cross
           sed -i 's/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) go run/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) GOAMD64= go run/' ./Makefile
