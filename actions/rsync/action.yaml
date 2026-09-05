@@ -7,7 +7,7 @@ inputs:
     required: true
   remote:
     description: remote file path
-    required: true
+    required: false
   key:
     description: remote host key
     required: true
