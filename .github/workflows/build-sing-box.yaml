@@ -110,5 +110,5 @@ jobs:
         uses: moaeiou/moaeiou/actions/rsync@main
         with:
           local: sing-box/sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
-          remote: /var/www/html/sing-box/
+          remote: sing-box/
           key: ${{ secrets.SSH_KEY }}
