@@ -16,6 +16,12 @@ outputs:
 runs:
   using: "composite"
   steps:
+    - name: Preparing build environment
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get install build-essential gettext xsltproc python3-pyelftools
+
     - name: Get SDK Full Directory Name
       id: sdk_dir
       shell: bash

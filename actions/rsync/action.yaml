@@ -24,9 +24,9 @@ runs:
         mkdir -p ~/.ssh
         echo "${{ inputs.key }}" >> ~/.ssh/rw_key
         chmod 600 ~/.ssh/rw_key
-        ssh-keyscan l.867678.xyz >> ~/.ssh/known_hosts
+        ssh-keyscan la.mirrors.867678.xyz >> ~/.ssh/known_hosts
 
     - name: Conexionario
       shell: bash
       run: |
-        rsync -avzh --progress ${{ inputs.extra }} -e "ssh -i ~/.ssh/rw_key -p 22" ${{ inputs.local }} root@l.867678.xyz:${{ inputs.remote }}
+        rsync -avzh --progress ${{ inputs.extra }} -e "ssh -i ~/.ssh/rw_key -p 22" ${{ inputs.local }} root@la.mirrors.867678.xyz:${{ inputs.remote }}

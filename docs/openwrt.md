@@ -16,7 +16,7 @@ apk add --allow-untrusted ./pkg.apk # --allow-untrusted because software not inc
 
 # 🔧 Compiling OpenWrt SDK.
 
-## 🔩 You need to prepare a Linux amd64 environment.
+## 🔩 You need a Linux amd64 environment.
 
 Demonstration system: Arch Linux amd64
 
@@ -28,7 +28,6 @@ OR any package manager you using.
 
 ## ⏬ Download SDK
 
-You have three choices
 [All the mirrors of OpenWrt](https://openwrt.org/mirrors)
 [All the mirrors of ImmortalWrt](https://downloads.immortalwrt.org/acknowledgements.html)
 [Mirror by MoAEIOU](https://867678.xyz/docs/mirrors)
@@ -50,7 +49,8 @@ tar -xvf ⚠️SDK_PKG_NAME
 ```bash
 cd ⚠️SDK_FOLDER_NAME
 make defconfig
-./scripts/feeds update -a && ./scripts/feeds install -a
+./scripts/feeds update -a
+./scripts/feeds install -a
 ```
 
 ## 📝 Clone source code
@@ -72,4 +72,4 @@ make package/⚠️project_name/compile V=s -j$(nproc)
 
 # ⚖️ License
 
-This document was licensed under the [MoPL](https://867678.xyz/docs/mopl)
+There documents licensed under the [MoPL](https://867678.xyz/docs/mopl)

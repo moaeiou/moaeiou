@@ -5,10 +5,8 @@
 | Question | Anwser |
 |  ----  | ----  |
 | Time zone | Default UTC+0 |
-| How long to sync | Every 4 hours from 00:00(UTC+0) |
-| What be mirror | Dynamic version programs, binary, SDK. Turn to the URL to view all it mirror. |
-| Are you support new features? | Yes, we supported QUIC, TLS1.3, X25519MLKEM768 and most new features. |
-| Are you support rsync? | Yes, it has been released. |
+| Support new feature? | Yes, we supported QUIC, TLS1.3, X25519MLKEM768 and most new features. |
+| Support rsync? | Yes, to dateils , please turn to [Here](#rsync). |
 
 ## 🗺 Location/Region?
 
@@ -16,22 +14,23 @@ We have some mirrors, Addr:
 
 | Location | Address | Note |
 |  ----  | ----  | ---- |
-| Los Angeles, CA, U.S. | `https://l.867678.xyz/` | Tier 1 Mirror and not support IPV6 |
-| Tokyo, Japan | `https://o.867678.xyz/` | Tier 2 Mirror, Every hours sync 1 time |
+| Los Angeles, CA, U.S. | `https://la.mirrors.867678.xyz/` | Tier 1 but not support IPV6 |
+| Singapore | `https://sg.mirrors.867678.xyz` | Tier 2 , sync every hour |
+| Tokyo, Japan | `https://o.867678.xyz/` | Destory at 2026-09-11(YYYY-MM-DD) |
 
 ## 💁 How to use?
 
-Just need change addr from `Original` to `https://l.867678.xyz/` or any others
+Just need change addr from `Origin` to `https://la.mirrors.867678.xyz/` or any others
 
-Such as you need to download `https://downloads.openwrt.org/snapshots/targets/x86/64/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst`
+For example:
 
-But it only have `5MB/S`, That is so slowly.
+- You need to download `https://downloads.openwrt.org/snapshots/targets/x86/64/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst`
+- But it only have `5MB/S`, That is so slowly.
+- So you can change address to `https://la.mirrors.867678.xyz/sdk/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst`.
 
-So you can change address to `https://l.867678.xyz/sdk/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst`.
+### ⌚ SpeedTest our mirrors
 
-Don't belive it fast? Don't worry!
-
-GitHub Actions:
+mirror in L.A.:
 ```bash
 07/18 13:51:49 [info] Downloading 1 item(s)
 [#2eb2f2 89MiB/282MiB(31%) CN:64 DL:94MiB ETA:2s]
@@ -45,7 +44,7 @@ gid   |stat|avg speed  |path/URI
 ======+====+===========+=======================================================
 2eb2f2|OK  |    82MiB/s|/home/runner/work/moaeiou/moaeiou/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst
 ```
-But the runner at:
+The runner at:
 ```bash
 {
   "ip": "52.159.244.162",
@@ -60,9 +59,10 @@ But the runner at:
 }
 ```
 
-Rsync
+## rsync
 
-GitHub Actions
+### 🪣 GitHub Actions
+
 ```yaml
 - name: Send to mirror
   uses: moaeiou/moaeiou/actions/rsync@main
@@ -73,15 +73,15 @@ GitHub Actions
     extra: --delete
 ```
 
-Sync from this mirrors to your mirror
+### 🧱 Sync to your mirror
 
-```bash
-rsync -avz --exclude='contento24/' --exclude='fancyindex-theme/' --exclude='speedtest' --delete rsync://l.867678.xyz/sync/ /var/www/html/
-```
-
-Aslo can try Mirror level 2
+Any mirror are all listening port `873`
 
 And option: `--delete` that 1:1 sync any changes from upstream
+
+```bash
+rsync -avz --exclude='contento24/' --exclude='0fi/' --exclude='speedtest' --delete rsync://server/sync/ /var/www/html/
+```
 
 ## 🙏 Acknowledgements
 
@@ -93,8 +93,8 @@ Server Donate: <https://github.com/midqwerty-alt> <https://github.com/muchengrui
 
 ## ⚖️ LICENSE
 
-Rsync was licensed under the GPL-v3
+Rsync licensed under the GPL-v3
 
 And mirrors servers using Debian GNU/Linux lisenced under the GPL-v2
 
-Mirrored files using their self open source license, it just a file server.
+Mirrored files using their open source license, it just a file server.
