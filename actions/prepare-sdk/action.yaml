@@ -33,7 +33,7 @@ runs:
       run: |
         set -e
 
-        curl -LO https://l.867678.xyz/sdk/${{ steps.sdk_dir.outputs.dir_name }}.tar.zst
+        curl -LO https://la.mirrors.867678.xyz/sdk/${{ steps.sdk_dir.outputs.dir_name }}.tar.zst
 
         tar -xvf ${{ steps.sdk_dir.outputs.dir_name }}.tar.zst
         rm ${{ steps.sdk_dir.outputs.dir_name }}.tar.zst
