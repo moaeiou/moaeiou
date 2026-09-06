@@ -1,8 +1,7 @@
 # Maintainer: MoAEIOU
 
 pkgname=motrix-next
-_pkgver_gh=3.9.8-beta.12
-pkgver=3.9.8_beta.12
+pkgver=3.9.8_beta.13
 pkgrel=1
 pkgdesc="A full-featured download manager rebuilt with Tauri 2, Vue 3, and Rust (tracks latest upstream release, including pre-releases)"
 arch=(x86_64)
@@ -19,7 +18,7 @@ depends=(
 )
 source=(
     "LICENSE"
-    "$pkgname-$pkgver-x86_64.deb::$url/releases/download/v$_pkgver_gh/MotrixNext_${_pkgver_gh}_amd64.deb"
+    "$pkgname-$pkgver-x86_64.deb::$url/releases/download/v$_pkgver/MotrixNext_${_pkgver}_amd64.deb"
 )
 sha256sums=('SKIP' 'SKIP')
 
