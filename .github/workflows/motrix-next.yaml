@@ -8,7 +8,8 @@ permissions:
   contents: write
 
 jobs:
-  clear-release:
+  clear:
+    name: I could live with it, out!
     runs-on: ubuntu-latest
     steps:
       - name: Clear assets
@@ -64,26 +65,6 @@ jobs:
         run: |
           su builder -c "cd '$GITHUB_WORKSPACE' && makepkg -s --noconfirm --needed"
           rm ./motrix-next-debug*
-
-      - name: Clear release assets
-        shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          release_id=$(gh api \
-            "/repos/moaeiou/moaeiou/releases/tags/motrix-next" \
-            --jq '.id')
-          echo "Release ID: ${release_id}"
-          gh api \
-            --paginate \
-            "/repos/moaeiou/moaeiou/releases/${release_id}/assets?per_page=100" \
-            --jq '.[].id' |
-          while read -r asset_id; do
-            echo "Deleting asset ${asset_id}"
-            gh api \
-              --method DELETE \
-              "/repos/moaeiou/moaeiou/releases/assets/${asset_id}"
-          done
 
       - name: Release
         uses: softprops/action-gh-release@master
