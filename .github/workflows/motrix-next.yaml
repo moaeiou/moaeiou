@@ -43,6 +43,26 @@ jobs:
           su builder -c "cd '$GITHUB_WORKSPACE' && makepkg -s --noconfirm --needed"
           rm ./motrix-next-debug*
 
+      - name: Clear release assets
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          release_id=$(gh api \
+            "/repos/moaeiou/moaeiou/releases/tags/motrix-next" \
+            --jq '.id')
+          echo "Release ID: ${release_id}"
+          gh api \
+            --paginate \
+            "/repos/moaeiou/moaeiou/releases/${release_id}/assets?per_page=100" \
+            --jq '.[].id' |
+          while read -r asset_id; do
+            echo "Deleting asset ${asset_id}"
+            gh api \
+              --method DELETE \
+              "/repos/moaeiou/moaeiou/releases/assets/${asset_id}"
+          done
+
       - name: Release
         uses: softprops/action-gh-release@master
         with:
@@ -53,30 +73,3 @@ jobs:
             - Fixes and improvements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Clear assets
-        shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          release_id=$(gh api \
-            "/repos/${{ github.repository }}/releases/tags/${{ github.ref_name }}" \
-            --jq '.id' 2>/dev/null || true)
-
-          if [ -z "$release_id" ]; then
-            echo "Release does not exist, nothing to clear."
-            exit 0
-          fi
-
-          echo "Release ID: ${release_id}"
-
-          gh api \
-            --paginate \
-            "/repos/${{ github.repository }}/releases/${release_id}/assets?per_page=100" \
-            --jq '.[].id' |
-          while read -r asset_id; do
-            echo "Deleting asset ${asset_id}"
-            gh api \
-              --method DELETE \
-              "/repos/${{ github.repository }}/releases/assets/${asset_id}"
-          done
