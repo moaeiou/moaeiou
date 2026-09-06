@@ -18,7 +18,7 @@ depends=(
 )
 source=(
     "LICENSE"
-    "$pkgname-$pkgver-x86_64.deb::$url/releases/download/v$pkgver/MotrixNext_$pkgver_amd64.deb"
+    "$pkgname-$pkgver-x86_64.deb::$url/releases/download/$pkgver/MotrixNext_${pkgver}_amd64.deb"
 )
 sha256sums=('SKIP' 'SKIP')
 
