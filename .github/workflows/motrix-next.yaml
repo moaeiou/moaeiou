@@ -8,6 +8,33 @@ permissions:
   contents: write
 
 jobs:
+  clear-release:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Clear assets
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        release_id=$(gh api \
+          "/repos/moaeiou/moaeiou/releases/tags/motrix-next" \
+          --jq '.id')
+
+        echo "Release ID: ${release_id}"
+
+        gh api \
+          --paginate \
+          "/repos/moaeiou/moaeiou/releases/${release_id}/assets?per_page=100" \
+          --jq '.[].id' |
+        while read -r asset_id; do
+          echo "Deleting asset ${asset_id}"
+
+          gh api \
+            --method DELETE \
+            "/repos/moaeiou/moaeiou/releases/assets/${asset_id}"
+        done
+
+        echo "All release assets deleted."
+
   build:
     runs-on: ubuntu-latest
     name: Unless you understand it
