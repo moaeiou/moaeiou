@@ -1,7 +1,7 @@
 # Maintainer: MoAEIOU
 
 pkgname=motrix-next
-pkgver=3.9.8_beta.13
+pkgver=3.9.8-beta.13
 pkgrel=1
 pkgdesc="A full-featured download manager rebuilt with Tauri 2, Vue 3, and Rust (tracks latest upstream release, including pre-releases)"
 arch=(x86_64)
