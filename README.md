@@ -1,5 +1,11 @@
 # 👋Hola, Soy MoAEIOU
 
+Elon musk, Fuck you! You just an asshole!
+
+So i'll making A new X named `FuckXter`
+
+Wait me!
+
 ## Conexión
 
 [GitHub](https://github.com/moaeiou)
@@ -7,11 +13,8 @@
 [E-Mail:me@867678.xyz](mailto:me@867678.xyz)
 
 [Telegram](https://telegram.me/Tortillas111)
-[X y introduccion](https://x.com/Com0loquieras)
 [YouTube](https://www.youtube.com/@user-pcj600)
 [Spotify](https://open.spotify.com/user/31rmv5v2776nx5kc234ljd55ubnq?si=310578bf5fed45c7)
-
-[Donate](https://x.com/Com0loquieras/status/2083748503621362165?s=20)
 
 ## GitHub Información
 
