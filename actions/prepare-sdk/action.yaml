@@ -26,16 +26,13 @@ runs:
         sudo apt-get update
         sudo apt-get install build-essential gettext xsltproc python3-pyelftools
 
-    - name: Get SDK Full Directory Name
+    - name: Get SDK Full Directory Name & Download and Initialize SDK
       id: sdk_dir
       shell: bash
       run: |
-        echo "dir_name=openwrt-sdk-${{ inputs.sdk_arch }}_gcc-${{ inputs.gcc_version }}_musl.Linux-x86_64" >> $GITHUB_OUTPUT
-
-    - name: Download and Initialize SDK
-      shell: bash
-      run: |
         set -e
+
+        echo "dir_name=openwrt-sdk-${{ inputs.sdk_arch }}_gcc-${{ inputs.gcc_version }}_musl.Linux-x86_64" >> $GITHUB_OUTPUT
 
         curl -LO https://${{ inputs.server }}/sdk/${{ steps.sdk_dir.outputs.dir_name }}.tar.zst
 
