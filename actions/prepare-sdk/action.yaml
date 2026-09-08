@@ -8,6 +8,10 @@ inputs:
     description: Upstream GCC version
     required: true
     default: "14.4.0"
+  server:
+    description: Download server
+    required: true
+    default: la.mirrors.867678.xyz
 outputs:
   sdk_dir:
     description: Extracted SDK directory name for downstream use
@@ -33,7 +37,7 @@ runs:
       run: |
         set -e
 
-        curl -LO https://la.mirrors.867678.xyz/sdk/${{ steps.sdk_dir.outputs.dir_name }}.tar.zst
+        curl -LO https://${{ inputs.server }}/sdk/${{ steps.sdk_dir.outputs.dir_name }}.tar.zst
 
         tar -xvf ${{ steps.sdk_dir.outputs.dir_name }}.tar.zst
         rm ${{ steps.sdk_dir.outputs.dir_name }}.tar.zst
