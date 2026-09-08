@@ -14,6 +14,10 @@ inputs:
   extra:
     description: extra arguments
     required: false
+  server:
+    description: remote server
+    required: false
+    default: la.mirrors.867678.xyz
 
 runs:
   using: "composite"
@@ -24,9 +28,9 @@ runs:
         mkdir -p ~/.ssh
         echo "${{ inputs.key }}" >> ~/.ssh/rw_key
         chmod 600 ~/.ssh/rw_key
-        ssh-keyscan la.mirrors.867678.xyz >> ~/.ssh/known_hosts
+        ssh-keyscan ${{ inputs.server }} >> ~/.ssh/known_hosts
 
     - name: Conexionario
       shell: bash
       run: |
-        rsync -avzh --progress ${{ inputs.extra }} -e "ssh -i ~/.ssh/rw_key -p 22" ${{ inputs.local }} root@la.mirrors.867678.xyz:/var/www/html/${{ inputs.remote }}
+        rsync -avzh --progress ${{ inputs.extra }} -e "ssh -i ~/.ssh/rw_key -p 22" ${{ inputs.local }} root@${{ inputs.server }}:/var/www/html/${{ inputs.remote }}
