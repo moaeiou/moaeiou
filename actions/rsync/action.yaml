@@ -16,7 +16,7 @@ inputs:
     required: false
   server:
     description: remote server
-    required: false
+    required: true
     default: la.mirrors.867678.xyz
 
 runs:
