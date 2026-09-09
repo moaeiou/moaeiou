@@ -32,13 +32,13 @@ runs:
       run: |
         set -e
         dir_name=openwrt-sdk-${{ inputs.sdk_arch }}_gcc-${{ inputs.gcc_version }}_musl.Linux-x86_64
-        echo "$dir_name" >> $GITHUB_OUTPUT
+        echo "dir_name=$dir_name" >> $GITHUB_OUTPUT
 
         curl -LO https://${{ inputs.server }}/sdk/$dir_name.tar.zst
 
-        tar -xvf ${{ steps.sdk_dir.outputs.dir_name }}.tar.zst
-        rm ${{ steps.sdk_dir.outputs.dir_name }}.tar.zst
-        cd ${{ steps.sdk_dir.outputs.dir_name }}
+        tar -xvf $dir_name.tar.zst
+        rm $dir_name.tar.zst
+        cd $dir_name
 
         make defconfig
         ./scripts/feeds update -a
