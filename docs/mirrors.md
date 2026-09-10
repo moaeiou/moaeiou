@@ -15,8 +15,8 @@ We have some mirrors, Addr:
 | Location | Address | Note |
 |  ----  | ----  | ---- |
 | Los Angeles, CA, U.S. | `https://la.mirrors.867678.xyz/` | Tier 1 but not support IPV6 |
-| Singapore | `https://sg.mirrors.867678.xyz` | Tier 2 , sync every hour |
-| Tokyo, Japan | `https://o.867678.xyz/` | Destory at 2026-09-11(YYYY-MM-DD) |
+| Singapore | `https://sg.mirrors.867678.xyz/` | Tier 2 , sync every hour |
+| Tokyo, Japan | `https://o.867678.xyz/` | Deprecated and removed on September 11, 2026 |
 
 ## 💁 How to use?
 
@@ -28,37 +28,6 @@ For example:
 - But it only have `5MB/S`, That is so slowly.
 - So you can change address to `https://la.mirrors.867678.xyz/sdk/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst`.
 
-### ⌚ SpeedTest our mirrors
-
-mirror in L.A.:
-```bash
-07/18 13:51:49 [info] Downloading 1 item(s)
-[#2eb2f2 89MiB/282MiB(31%) CN:64 DL:94MiB ETA:2s]
-[#2eb2f2 150MiB/282MiB(53%) CN:64 DL:78MiB ETA:1s]
-[#2eb2f2 231MiB/282MiB(81%) CN:64 DL:79MiB]
-
-07/18 13:51:53 [info] Download complete: /home/runner/work/moaeiou/moaeiou/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst
-
-Download Results:
-gid   |stat|avg speed  |path/URI
-======+====+===========+=======================================================
-2eb2f2|OK  |    82MiB/s|/home/runner/work/moaeiou/moaeiou/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst
-```
-The runner at:
-```bash
-{
-  "ip": "52.159.244.162",
-  "city": "San Jose",
-  "region": "California",
-  "country": "US",
-  "loc": "37.3394,-121.8950",
-  "org": "AS8075 Microsoft Corporation",
-  "postal": "95110",
-  "timezone": "America/Los_Angeles",
-  "readme": "https://ipinfo.io/missingauth"
-}
-```
-
 ## rsync
 
 ### 🪣 GitHub Actions
@@ -68,9 +37,11 @@ The runner at:
   uses: moaeiou/moaeiou/actions/rsync@main
   with:
     local: ${{ steps.sdk.outputs.sdk_dir }}/bin/packages/x86_64/base/
-    remote: /var/www/html/
-    key: ${{ secrets.CC_LA_KEY }}
+    remote: floder/
+    # Default start from /var/www/html/
+    key: ${{ secrets.SSH_KEY }}
     extra: --delete
+    server: la.mirrors.867678.xyz
 ```
 
 ### 🧱 Sync to your mirror
