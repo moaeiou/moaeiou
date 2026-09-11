@@ -16,7 +16,6 @@ We have some mirrors, Addr:
 |  ----  | ----  | ---- |
 | Los Angeles, CA, U.S. | `https://la.mirrors.867678.xyz/` | Tier 1 but not support IPV6 |
 | Singapore | `https://sg.mirrors.867678.xyz/` | Tier 2 , sync every hour |
-| Tokyo, Japan | `https://o.867678.xyz/` | Deprecated and removed on September 11, 2026 |
 
 ## 💁 How to use?
 
