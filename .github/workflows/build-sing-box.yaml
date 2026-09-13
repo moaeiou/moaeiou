@@ -76,7 +76,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
         with:
-          path: ../useless/
+          path: /dev/null
     
       - name: Prepare sing-box Source Code
         shell: bash
