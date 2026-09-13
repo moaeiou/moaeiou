@@ -76,12 +76,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
         with:
-          path: useless/
+          path: ../useless/
     
       - name: Prepare sing-box Source Code
         shell: bash
         run: |
-          git clone --depth=1 https://github.com/SagerNet/sing-box.git
+          git clone --depth=1 https://github.com/SagerNet/sing-box.git ./
           git checkout ${{ matrix.branch }}
           git pull
           git fetch --tags --force
