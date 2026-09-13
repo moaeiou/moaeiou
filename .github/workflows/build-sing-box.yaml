@@ -103,7 +103,8 @@ jobs:
           go mod tidy
 
           sed -i 's/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) go run/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) GOAMD64= go run/' ./Makefile
-          VALE=$(go run ./cmd/internal/read_tag)
+          VALE=$(GOOS=linux GOARCH=amd64 go run ./cmd/internal/read_tag)
+          echo $VALE
 
           ${{ matrix.extra }} TAGS="${{ matrix.tag }}" VERSION=$VALE make -j$(nproc)
           mv ./sing-box ./sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
