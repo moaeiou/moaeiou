@@ -76,12 +76,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
         with:
-          path: /dev/null
+          path: useless/
     
       - name: Prepare sing-box Source Code
         shell: bash
         run: |
-          git clone --depth=1 https://github.com/SagerNet/sing-box.git ./
+          git clone --depth=1 https://github.com/SagerNet/sing-box.git
+          cd sing-box/
           git checkout ${{ matrix.branch }}
           git pull
           git fetch --tags --force
@@ -101,6 +102,7 @@ jobs:
       - name: Build!
         shell: bash
         run: |
+          cd sing-box/
           go mod tidy
 
           sed -i 's/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) go run/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) GOAMD64= go run/' ./Makefile
@@ -114,7 +116,7 @@ jobs:
         uses: softprops/action-gh-release@master
         with:
           tag_name: sing-box
-          files: sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
+          files: sing-box/sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
           target_commitish: main
           body:
         env:
@@ -123,6 +125,6 @@ jobs:
       - name: Send to mirror
         uses: moaeiou/moaeiou/actions/rsync@main
         with:
-          local: sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
+          local: sing-box/sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
           remote: sing-box/
           key: ${{ secrets.SSH_KEY }}
