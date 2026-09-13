@@ -17,7 +17,7 @@ inputs:
   server:
     description: remote server
     required: true
-    default: la.mirrors.867678.xyz
+    default: la.867678.xyz
 
 runs:
   using: "composite"

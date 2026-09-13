@@ -11,7 +11,7 @@ inputs:
   server:
     description: Download server
     required: true
-    default: la.mirrors.867678.xyz
+    default: la.867678.xyz
 outputs:
   sdk_dir:
     description: Extracted SDK directory name for downstream use
