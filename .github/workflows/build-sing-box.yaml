@@ -78,6 +78,7 @@ jobs:
         with:
           repository: SagerNet/sing-box
           ref: ${{ matrix.branch }}
+          fetch-depth: 0
     
       - name: Proccessor sing-box Source Code
         shell: bash
@@ -103,7 +104,7 @@ jobs:
           go mod tidy
 
           sed -i 's/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) go run/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) GOAMD64= go run/' ./Makefile
-          VALE=$(GOOS=linux GOARCH=amd64 go run ./cmd/internal/read_tag)
+          VALE=$(go run ./cmd/internal/read_tag)
           echo $VALE
 
           ${{ matrix.extra }} TAGS="${{ matrix.tag }}" VERSION=$VALE make -j$(nproc)
