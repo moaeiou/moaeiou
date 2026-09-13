@@ -81,7 +81,7 @@ jobs:
       - name: Prepare sing-box Source Code
         shell: bash
         run: |
-          git clone --depth=1 https://github.com/SagerNet/sing-box.git
+          git clone https://github.com/SagerNet/sing-box.git
           cd sing-box/
           git checkout ${{ matrix.branch }}
           git pull
