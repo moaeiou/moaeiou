@@ -14,18 +14,18 @@ We have some mirrors, Addr:
 
 | Location | Address | Note |
 |  ----  | ----  | ---- |
-| Los Angeles, CA, U.S. | `https://la.mirrors.867678.xyz/` | Tier 1 but not support IPV6 |
-| Singapore | `https://sg.mirrors.867678.xyz/` | Tier 2 , sync every hour |
+| Los Angeles, CA, U.S. | `https://la.867678.xyz/` | Tier 1 but not support IPV6 |
+| Singapore | `https://sg.867678.xyz/` | Tier 2 , sync every hour |
 
 ## 💁 How to use?
 
-Just need change addr from `Origin` to `https://la.mirrors.867678.xyz/` or any others
+Just need change addr from `Origin` to `https://x.867678.xyz/` or any others
 
 For example:
 
 - You need to download `https://downloads.openwrt.org/snapshots/targets/x86/64/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst`
 - But it only have `5MB/S`, That is so slowly.
-- So you can change address to `https://la.mirrors.867678.xyz/sdk/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst`.
+- So you can change address to `https://x.867678.xyz/sdk/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst`.
 
 ## rsync
 
@@ -36,11 +36,7 @@ For example:
   uses: moaeiou/moaeiou/actions/rsync@main
   with:
     local: ${{ steps.sdk.outputs.sdk_dir }}/bin/packages/x86_64/base/
-    remote: floder/
-    # Default start from /var/www/html/
     key: ${{ secrets.SSH_KEY }}
-    extra: --delete
-    server: la.mirrors.867678.xyz
 ```
 
 ### 🧱 Sync to your mirror
