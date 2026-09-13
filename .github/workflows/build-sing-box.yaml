@@ -76,13 +76,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
         with:
-          repository: SagerNet/sing-box
-          ref: ${{ matrix.branch }}
-          fetch-depth: 0
+          path: useless/
     
-      - name: Proccessor sing-box Source Code
+      - name: Prepare sing-box Source Code
         shell: bash
         run: |
+          git clone --depth=1 https://github.com/sagernet/sing-box.git
+          git checkout ${{ matrix.branch }}
           git pull
           git fetch --tags --force
 
