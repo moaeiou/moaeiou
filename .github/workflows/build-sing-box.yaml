@@ -115,6 +115,7 @@ jobs:
         with:
           tag_name: sing-box
           files: sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
+          target_commitish: main
           body:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
