@@ -1,11 +1,5 @@
 # 👋Hola, Soy MoAEIOU
 
-Elon musk, Fuck you! You just an asshole!
-
-So i'll making A new X named `FuckXter`
-
-Wait me!
-
 ## Conexión
 
 [GitHub](https://github.com/moaeiou)
@@ -13,6 +7,7 @@ Wait me!
 [E-Mail:me@867678.xyz](mailto:me@867678.xyz)
 
 [Telegram](https://telegram.me/Tortillas111)
+[FuckXter](https://867678.xyz/fuckxter/user/com0loquieras)
 [YouTube](https://www.youtube.com/@user-pcj600)
 [Spotify](https://open.spotify.com/user/31rmv5v2776nx5kc234ljd55ubnq?si=310578bf5fed45c7)
 
@@ -28,15 +23,9 @@ Wait me!
 
 ### Logo
 
+[Our logos](https://github.com/moaeiou/moaeiou/tree/main/logos)
+
 Copyright MoAEIOU All rights reserved. Licensed under the [MoPL](https://867678.xyz/docs/mopl)
-
-[SVG](https://cdn.jsdelivr.net/gh/moaeiou/moaeiou@main/logos/favicon.svg)
-[PNG](https://cdn.jsdelivr.net/gh/moaeiou/moaeiou@main/logos/moaeiou.png)
-[KRA](https://cdn.jsdelivr.net/gh/moaeiou/moaeiou@main/logos/moaeiou.kra)
-
-### Org
-
-[orgmio PNG](https://cdn.jsdelivr.net/gh/moaeiou/moaeiou@main/logos/orgmio.png)
 
 ### GPG Keys
 
@@ -44,15 +33,7 @@ This GPG key has been verified at [keys.openpgp.org](https://keys.openpgp.org/se
 
 GPG Hash(ECC Last Change:2026-08-24): `5E54260597C626B728033C4FA8AD61D8CF82E315`
 
-> Revoked certificates
-
-[Here](https://github.com/moaeiou/moaeiou/tree/main/revocs) to view revoked certificates.
-
-Revoked certificates: 
-
-`4983B46224D4B0A3CB4882811331669714CF2BC1`
-
-`F6CAA8CFEC4145974398DF631CEDB8D3CB4CC7BE`
+[View revoked certificates](https://github.com/moaeiou/moaeiou/tree/main/revocs)
 
 ## Muchas gracias
 
