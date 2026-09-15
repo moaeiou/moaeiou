@@ -7,7 +7,7 @@
 [E-Mail:me@867678.xyz](mailto:me@867678.xyz)
 
 [Telegram](https://telegram.me/Tortillas111)
-[FuckXter](https://867678.xyz/fuckxter/user/com0loquieras)
+[FuckXter](https://fuckxter.site/user/com0loquieras)
 [YouTube](https://www.youtube.com/@user-pcj600)
 [Spotify](https://open.spotify.com/user/31rmv5v2776nx5kc234ljd55ubnq?si=310578bf5fed45c7)
 
