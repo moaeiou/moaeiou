@@ -12,6 +12,9 @@ inputs:
     description: do you want release compile files
     required: false
     default: no
+  release-files:
+    description: release files
+    required: false
   release-body:
     description: release body
     required: false
@@ -66,8 +69,8 @@ runs:
       uses: softprops/action-gh-release@master
       if: ${{ inputs.release == 'yes' }}
       with:
-        tag_name: V${{ steps.get_version.outputs.version }}
-        files: contento24.tar.zst
+        tag_name: v${{ steps.get_version.outputs.version }}
+        files: ${{ inputs.release-files }}
         body: |
           ${{ inputs.release-body }}
 
