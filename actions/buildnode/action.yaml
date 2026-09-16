@@ -37,6 +37,7 @@ inputs:
   rsync-server:
     description: rsync remote server
     required: false
+    default: ""
   rsync-extra:
     description: rsync extra arguments
     required: false
