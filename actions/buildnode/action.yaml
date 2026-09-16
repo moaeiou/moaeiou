@@ -1,0 +1,82 @@
+name: Build pnpm and nodejs project
+description: pnpm is useless
+
+inputs:
+  command:
+    description: extra build commands
+    required: false
+    default: |
+       pnpm install
+       pnpm build
+  release:
+    description: do you want release compile files
+    required: false
+    default: no
+  release-body:
+    description: release body
+    required: false
+    default: |
+      # 📝 Release Notes
+      - Fixes and improvements
+  rsync:
+    description: do you want sync to mirror
+    required: false
+    default: no
+  rsync-local:
+    description: rsync local path
+    required: false
+  rsync-remote:
+    description: rsync remote path
+    required: false
+  rsync-key:
+    description: rsync peer server key
+    required: false
+  rsync-server:
+    description: rsync remote server
+    required: false
+  rsync-extra:
+    description: rsync extra arguments
+    required: false
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@main
+
+    - name: Get version
+      id: get_version
+      shell: bash
+      run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+    - name: Set up Node.js
+      uses: actions/setup-node@main
+      with:
+        node-version: latest
+
+    - name: Set up pnpm
+      uses: pnpm/action-setup@master
+
+    - name: Update dependencies
+      shell: bash
+      run: |
+        ${{ inputs.command }}
+
+    - name: Release
+      uses: softprops/action-gh-release@master
+      if: ${{ inputs.release == 'yes' }}
+      with:
+        tag_name: V${{ steps.get_version.outputs.version }}
+        files: contento24.tar.zst
+        body: |
+          ${{ inputs.release-body }}
+
+    - name: Send to mirror
+      uses: moaeiou/moaeiou/actions/rsync@main
+      if: ${{ inputs.rsync == 'yes' }}
+      with:
+        local: ${{ inputs.rsync-local }}
+        remote: ${{ inputs.rsync-remote }}
+        key: ${{ inputs.rsync-key }}
+        extra: ${{ inputs.rsync-extra }}
+        server: ${{ inputs.rsync-server }}
