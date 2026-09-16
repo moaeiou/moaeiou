@@ -37,7 +37,7 @@ inputs:
   rsync-server:
     description: rsync remote server
     required: false
-    default: ""
+    default: la.867678.xyz
   rsync-extra:
     description: rsync extra arguments
     required: false
@@ -83,4 +83,4 @@ runs:
         remote: ${{ inputs.rsync-remote }}
         key: ${{ inputs.rsync-key }}
         extra: ${{ inputs.rsync-extra }}
-        ${{ inputs.rsync-server }}
+        server: ${{ inputs.rsync-server }}
