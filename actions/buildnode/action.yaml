@@ -82,4 +82,4 @@ runs:
         remote: ${{ inputs.rsync-remote }}
         key: ${{ inputs.rsync-key }}
         extra: ${{ inputs.rsync-extra }}
-        server: ${{ inputs.rsync-server }}
+        ${{ inputs.rsync-server }}
