@@ -1,12 +1,12 @@
 # Maintainer: MoAEIOU
 
-pkgname=motrix-next
-pkgver_gh=3.9.9
-pkgver=3.9.9
+pkgname=rayburst
+pkgver_gh=4.0.0-beta.1
+pkgver=4.0.0_beta.1
 pkgrel=1
-pkgdesc="A full-featured download manager rebuilt with Tauri 2, Vue 3, and Rust (tracks latest upstream release, including pre-releases)"
+pkgdesc="Redefining the open-source download manager"
 arch=(x86_64)
-url="https://github.com/AnInsomniacy/motrix-next"
+url="https://github.com/AnInsomniacy/rayburst"
 license=(MIT)
 depends=(
     cairo
@@ -19,7 +19,7 @@ depends=(
 )
 source=(
     "LICENSE"
-    "$pkgname-$pkgver-x86_64.deb::$url/releases/download/v$pkgver_gh/MotrixNext_${pkgver_gh}_amd64.deb"
+    "$pkgname-$pkgver-x86_64.deb::$url/releases/download/v$pkgver_gh/Rayburst-${pkgver_gh}_amd64.deb"
 )
 sha256sums=('SKIP' 'SKIP')
 
@@ -31,7 +31,7 @@ prepare() {
 package() {
     tar -xf data.tar.gz -C "$pkgdir"
     sed -i '/^Categories=/c\Categories=Network;FileTransfer;' \
-        "$pkgdir/usr/share/applications/MotrixNext.desktop"
+        "$pkgdir/usr/share/applications/Rayburst.desktop"
 
     install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
