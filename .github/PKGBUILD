@@ -19,7 +19,7 @@ depends=(
 )
 source=(
     "LICENSE"
-    "$pkgname-$pkgver-x86_64.deb::$url/releases/download/v$pkgver_gh/Rayburst-${pkgver_gh}_amd64.deb"
+    "$pkgname-$pkgver-x86_64.deb::$url/releases/download/v$pkgver_gh/Rayburst_${pkgver_gh}_amd64.deb"
 )
 sha256sums=('SKIP' 'SKIP')
 
