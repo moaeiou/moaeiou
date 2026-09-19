@@ -1,5 +1,5 @@
 name: Build pnpm and nodejs project
-description: pnpm is useless
+description: Fuck the pnpm and nodejs
 
 inputs:
   command:
@@ -20,7 +20,13 @@ inputs:
   release:
     description: do you want release compile files
     required: false
-    default: no
+  release-get_version:
+    description: do you want get your project version from package.json
+    required: false
+    default: yes
+  release-tag_name:
+    description: release tag name
+    required: false
   release-files:
     description: release files
     required: false
@@ -33,7 +39,6 @@ inputs:
   rsync:
     description: do you want sync to mirror
     required: false
-    default: no
   rsync-local:
     description: rsync local path
     required: false
@@ -78,7 +83,7 @@ runs:
         command: ${{ inputs.wrangler-command }}
 
     - name: Get version
-      if: ${{ inputs.release == 'yes' }}
+      if: ${{ inputs.release == 'yes' && inputs.release-get_version == 'yes' }}
       id: get_version
       shell: bash
       run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
@@ -87,7 +92,7 @@ runs:
       uses: softprops/action-gh-release@master
       if: ${{ inputs.release == 'yes' }}
       with:
-        tag_name: v${{ steps.get_version.outputs.version }}
+        tag_name: ${{ inputs.release-tag_name || format('v{0}', steps.get_version.outputs.version) }}
         files: ${{ inputs.release-files }}
         body: |
           ${{ inputs.release-body }}
