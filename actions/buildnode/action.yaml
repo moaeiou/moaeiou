@@ -2,6 +2,10 @@ name: Build pnpm and nodejs project
 description: Fuck the pnpm and nodejs
 
 inputs:
+  pnpm:
+    description: needs pnpm
+    required: false
+    default: yes
   command:
     description: extra build commands
     required: false
@@ -68,6 +72,7 @@ runs:
         node-version: latest
 
     - name: Set up pnpm
+      if: ${{ inputs.pnpm == 'yes' }}
       uses: pnpm/action-setup@master
 
     - name: Build!
