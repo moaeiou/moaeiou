@@ -6,37 +6,37 @@ These rules are mandatory. Follow them unless the user explicitly gives differen
 
 ## 1. Dependencies and Versions
 
-* Always prefer the `latest` version when adding or updating dependencies.
-* Do not intentionally pin dependencies to old versions.
-* For GitHub Actions, use `@main` or `@master`.
-* Do not use commit SHA pins for GitHub Actions unless explicitly requested.
-* Do not add unnecessary dependencies.
-* Do not upgrade unrelated dependencies.
-* Do not modify dependency versions unless required by the task.
+- Always prefer the `latest` version when adding or updating dependencies.
+- Do not intentionally pin dependencies to old versions.
+- For GitHub Actions, use `@main` or `@master`.
+- Do not use commit SHA pins for GitHub Actions unless explicitly requested.
+- Do not add unnecessary dependencies.
+- Do not upgrade unrelated dependencies.
+- Do not modify dependency versions unless required by the task.
 
 ## 2. Code Style
 
-* Keep the implementation simple and concise.
-* Keep variable names short, clear, and meaningful.
-* Keep function names short, clear, and meaningful.
-* Do not use unnecessarily verbose names.
-* Do not add comments unless they are genuinely necessary to explain non-obvious behavior.
-* Do not add comments that merely restate what the code does.
-* Avoid unnecessary abstractions.
-* Avoid unnecessary helper functions.
-* Avoid over-engineering.
-* Follow the existing project conventions when they are more specific than these rules.
+- Keep the implementation simple and concise.
+- Keep variable names short, clear, and meaningful.
+- Keep function names short, clear, and meaningful.
+- Do not use unnecessarily verbose names.
+- Do not add comments unless they are genuinely necessary to explain non-obvious behavior.
+- Do not add comments that merely restate what the code does.
+- Avoid unnecessary abstractions.
+- Avoid unnecessary helper functions.
+- Avoid over-engineering.
+- Follow the existing project conventions when they are more specific than these rules.
 
 ## 3. Scope of Changes
 
-* Make the smallest change that fully solves the task.
-* Do not modify unrelated files.
-* Do not refactor unrelated code.
-* Do not change formatting in unrelated files.
-* Do not rename files, variables, functions, or modules unless required by the task.
-* Do not change public APIs unless required by the task.
-* Do not introduce new architecture unless required by the task.
-* Do not silently change behavior outside the requested scope.
+- Make the smallest change that fully solves the task.
+- Do not modify unrelated files.
+- Do not refactor unrelated code.
+- Do not change formatting in unrelated files.
+- Do not rename files, variables, functions, or modules unless required by the task.
+- Do not change public APIs unless required by the task.
+- Do not introduce new architecture unless required by the task.
+- Do not silently change behavior outside the requested scope.
 
 ## 4. pnpm Projects
 
@@ -94,21 +94,21 @@ Do not skip `pnpm check` or `pnpm format` unless the user explicitly asks you to
 
 ## 5. Local Verification
 
-* Always inspect the result locally after making changes.
-* Do not assume the code works based only on static inspection.
-* For `pnpm` projects, use `pnpm dev` for local verification.
-* Check the actual result of the change before finishing.
-* If verification cannot be completed, clearly state what could not be verified.
+- Always inspect the result locally after making changes.
+- Do not assume the code works based only on static inspection.
+- For `pnpm` projects, use `pnpm dev` for local verification.
+- Check the actual result of the change before finishing.
+- If verification cannot be completed, clearly state what could not be verified.
 
 ## 6. Git
 
 ### No Automatic Commits
 
-* Never create a Git commit automatically.
-* Never run `git commit` unless the user explicitly requests a commit.
-* Never run `git push` unless the user explicitly requests it.
-* Leave changes in the working tree after completing the task.
-* The user must be able to review the changes before committing.
+- Never create a Git commit automatically.
+- Never run `git commit` unless the user explicitly requests a commit.
+- Never run `git push` unless the user explicitly requests it.
+- Leave changes in the working tree after completing the task.
+- The user must be able to review the changes before committing.
 
 ### Before Commit
 
@@ -142,21 +142,21 @@ Do not change the version by `major`, `minor`, or any other increment.
 
 ### Commit Scope
 
-* Do not include unrelated changes in a commit.
-* Do not revert user changes.
-* Do not reset the working tree unless explicitly requested.
-* Do not use destructive Git commands unless explicitly requested.
-* Preserve existing user modifications.
+- Do not include unrelated changes in a commit.
+- Do not revert user changes.
+- Do not reset the working tree unless explicitly requested.
+- Do not use destructive Git commands unless explicitly requested.
+- Preserve existing user modifications.
 
 ## 7. Existing User Changes
 
 Before modifying files:
 
-* Check the current working tree state.
-* Treat existing uncommitted changes as user-owned.
-* Do not overwrite, discard, reset, or revert existing user changes.
-* Keep task-related changes separate from unrelated existing changes whenever possible.
-* Do not assume existing modifications were created by you.
+- Check the current working tree state.
+- Treat existing uncommitted changes as user-owned.
+- Do not overwrite, discard, reset, or revert existing user changes.
+- Keep task-related changes separate from unrelated existing changes whenever possible.
+- Do not assume existing modifications were created by you.
 
 Never use destructive commands such as:
 
@@ -170,30 +170,30 @@ unless the user explicitly requests the operation.
 
 ## 8. Package Manager
 
-* Detect the package manager from the repository.
-* If the project uses `pnpm`, use `pnpm`.
-* Do not switch package managers.
-* Do not generate a different lockfile.
-* Do not run `npm install`, `yarn install`, or equivalent commands in a pnpm project.
+- Detect the package manager from the repository.
+- If the project uses `pnpm`, use `pnpm`.
+- Do not switch package managers.
+- Do not generate a different lockfile.
+- Do not run `npm install`, `yarn install`, or equivalent commands in a pnpm project.
 
 ## 9. Lockfiles
 
-* Preserve the existing lockfile format.
-* Do not delete lockfiles.
-* Do not regenerate lockfiles unnecessarily.
-* Only modify the lockfile when a dependency change actually requires it.
+- Preserve the existing lockfile format.
+- Do not delete lockfiles.
+- Do not regenerate lockfiles unnecessarily.
+- Only modify the lockfile when a dependency change actually requires it.
 
 ## 10. Final Review
 
 Before finishing a task:
 
-* Review the changed files.
-* Review the Git diff.
-* Confirm there are no unrelated modifications.
-* Confirm the requested behavior works locally.
-* Confirm `pnpm check` passes for pnpm projects.
-* Confirm `pnpm format` has been run for pnpm projects.
-* Confirm no commit was created unless explicitly requested.
+- Review the changed files.
+- Review the Git diff.
+- Confirm there are no unrelated modifications.
+- Confirm the requested behavior works locally.
+- Confirm `pnpm check` passes for pnpm projects.
+- Confirm `pnpm format` has been run for pnpm projects.
+- Confirm no commit was created unless explicitly requested.
 
 ## 11. Priority
 
@@ -210,16 +210,16 @@ Never invent requirements that are not necessary for the task.
 
 Unless the user explicitly says otherwise:
 
-* Use latest versions.
-* Use `@main` or `@master` for GitHub Actions.
-* Keep code concise.
-* Minimize comments.
-* Keep names short and clear.
-* Make minimal changes.
-* Verify locally.
-* Run `pnpm check`.
-* Run `pnpm format`.
-* Do not build with `pnpm build` for normal verification.
-* Do not commit.
-* Do not push.
-* Only bump `package.json` version by `0.0.1` when a commit has been explicitly requested.
+- Use latest versions.
+- Use `@main` or `@master` for GitHub Actions.
+- Keep code concise.
+- Minimize comments.
+- Keep names short and clear.
+- Make minimal changes.
+- Verify locally.
+- Run `pnpm check`.
+- Run `pnpm format`.
+- Do not build with `pnpm build` for normal verification.
+- Do not commit.
+- Do not push.
+- Only bump `package.json` version by `0.0.1` when a commit has been explicitly requested.

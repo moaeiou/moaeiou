@@ -10,8 +10,8 @@ inputs:
     description: extra build commands
     required: false
     default: |
-       pnpm install
-       pnpm build
+      pnpm install
+      pnpm build
   wrangler:
     description: send compile file to cloudflare serverless
     required: false

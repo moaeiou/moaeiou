@@ -1,0 +1,4 @@
+config sing-box 'main'
+    option enabled '1'
+    option conffile '/etc/sing-box/config.json'
+    option workdir '/usr/share/sing-box'

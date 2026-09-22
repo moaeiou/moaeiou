@@ -2,11 +2,11 @@
 
 ## Conexión
 
-[GitHub](https://github.com/moaeiou)
-[WebSite](https://867678.xyz/)
+[Telegram](https://telegram.me/Tortillas111)
 [E-Mail:me@867678.xyz](mailto:me@867678.xyz)
 
-[Telegram](https://telegram.me/Tortillas111)
+[GitHub](https://github.com/moaeiou)
+[WebSite](https://867678.xyz/)
 [FuckXter](https://fuckxter.site/user/com0loquieras)
 [YouTube](https://www.youtube.com/@user-pcj600)
 [Spotify](https://open.spotify.com/user/31rmv5v2776nx5kc234ljd55ubnq?si=310578bf5fed45c7)

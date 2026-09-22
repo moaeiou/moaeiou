@@ -32,6 +32,7 @@ jobs:
           done
 
   build:
+    needs: clear
     runs-on: ubuntu-latest
     name: Unless you understand it
     container:
@@ -48,22 +49,14 @@ jobs:
           pacman -Syu --noconfirm
           pacman -S --needed --noconfirm base-devel
           mv .github/PKGBUILD ./PKGBUILD
-          mv .github/LICENSE ./LICENSE
           source PKGBUILD
           deps=("${depends[@]}" "${makedepends[@]}")
           pacman -S --needed --noconfirm "${deps[@]}"
 
-      - name: Create build user
-        shell: bash
-        run: |
-          useradd -m builder
-          echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-          chown -R builder:builder "$GITHUB_WORKSPACE"
-
       - name: Build!
         shell: bash
         run: |
-          su builder -c "cd '$GITHUB_WORKSPACE' && makepkg -s --noconfirm --needed"
+          makepkg -s --noconfirm --needed
           rm ./rayburst-debug*
 
       - name: Release

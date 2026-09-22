@@ -6,7 +6,7 @@ PKG_RELEASE:=$(shell date +"%Y%m%d%H%M%S")
 PKG_LICENSE:=GPL-3.0
 
 LUCI_TITLE:=sing-box , fuck you
-LUCI_PKGARCH:=x86_64
+LUCI_PKGARCH:=aarch64_coretex-a53
 LUCI_DEPENDS:= \
 	+ca-bundle \
 	+kmod-inet-diag \

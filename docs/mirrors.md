@@ -2,20 +2,20 @@
 
 ## 🤔 Q&A
 
-| Question | Anwser |
-|  ----  | ----  |
-| Time zone | Default UTC+0 |
+| Question             | Anwser                                                                |
+| -------------------- | --------------------------------------------------------------------- |
+| Time zone            | Default UTC+0                                                         |
 | Support new feature? | Yes, we supported QUIC, TLS1.3, X25519MLKEM768 and most new features. |
-| Support rsync? | Yes, to dateils , please turn to [Here](#rsync). |
+| Support rsync?       | Yes, to dateils , please turn to [Here](#rsync).                      |
 
 ## 🗺 Location/Region?
 
 We have some mirrors, Addr:
 
-| Location | Address | Note |
-|  ----  | ----  | ---- |
+| Location              | Address                  | Note                        |
+| --------------------- | ------------------------ | --------------------------- |
 | Los Angeles, CA, U.S. | `https://la.867678.xyz/` | Tier 1 but not support IPV6 |
-| Singapore | `https://sg.867678.xyz/` | Tier 2 , sync every hour |
+| Singapore             | `https://sg.867678.xyz/` | Tier 2 , sync every hour    |
 
 ## 💁 How to use?
 
