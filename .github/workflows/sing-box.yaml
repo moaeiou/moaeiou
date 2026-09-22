@@ -109,7 +109,6 @@ jobs:
           COMMIT=$(git rev-parse --short HEAD)
           VALE="${BASE_VERSION}-${{ matrix.branch }}.${COMMIT}"
 
-          go get -u ./...
           go mod tidy
           ${{ matrix.extra }} TAGS="${{ matrix.tag }}" VERSION="$VALE" make -j$(nproc)
           mv ./sing-box ./sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
