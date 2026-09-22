@@ -101,6 +101,8 @@ runs:
         files: ${{ inputs.release-files }}
         body: |
           ${{ inputs.release-body }}
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Send to mirror
       uses: moaeiou/moaeiou/actions/rsync@main
