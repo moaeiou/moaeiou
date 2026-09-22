@@ -103,15 +103,14 @@ jobs:
         shell: bash
         run: |
           cd sing-box/
-          go mod tidy
 
           sed -i 's/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) go run/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) GOAMD64= go run/' ./Makefile
           BASE_VERSION=$(git describe --tags --abbrev=0 | sed 's/^v//')
           COMMIT=$(git rev-parse --short HEAD)
           VALE="${BASE_VERSION}-${{ matrix.branch }}.${COMMIT}"
 
-          echo "sing-box version: $VALE"
-
+          go get -u ./...
+          go mod tidy
           ${{ matrix.extra }} TAGS="${{ matrix.tag }}" VERSION="$VALE" make -j$(nproc)
           mv ./sing-box ./sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
 
