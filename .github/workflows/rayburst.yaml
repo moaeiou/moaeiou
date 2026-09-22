@@ -38,7 +38,6 @@ jobs:
     container:
       image: archlinux:latest
       options: --privileged
-
     steps:
       - name: Checkout
         uses: actions/checkout@main
@@ -56,7 +55,10 @@ jobs:
       - name: Build!
         shell: bash
         run: |
-          makepkg -s --noconfirm --needed
+          useradd -m builder
+          echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+          chown -R builder:builder "$GITHUB_WORKSPACE"
+          su builder -c "cd '$GITHUB_WORKSPACE' && makepkg -s --noconfirm --needed"
           rm ./rayburst-debug*
 
       - name: Release
