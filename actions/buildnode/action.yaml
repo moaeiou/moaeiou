@@ -82,7 +82,7 @@ runs:
 
     - name: Sent to Cloudflare
       if: ${{ inputs.wrangler == 'yes' }}
-      uses: cloudflare/wrangler-action@v4.1.1
+      uses: cloudflare/wrangler-action@v4
       with:
         apiToken: ${{ inputs.wrangler-apiToken }}
         command: ${{ inputs.wrangler-command }}
