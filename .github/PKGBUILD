@@ -1,8 +1,8 @@
 # Maintainer: MoAEIOU
 
 pkgname=rayburst
-pkgver_gh=4.0.0-beta.5
-pkgver=4.0.0_beta.5
+pkgver_gh=4.0.0-beta.6
+pkgver=4.0.0_beta.6
 pkgrel=1
 pkgdesc="Redefining the open-source download manager"
 arch=(x86_64)

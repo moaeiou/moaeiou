@@ -11,21 +11,21 @@ jobs:
   clear:
     name: I could live with it, out!
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - name: Clear assets
-        env:
-          GH_TOKEN: ${{ github.token }}
+        shell: bash
         run: |
           release_id=$(gh api \
             "/repos/moaeiou/moaeiou/releases/tags/rayburst" \
             --jq '.id')
           gh api \
             --paginate \
-            "/repos/moaeiou/moaeiou/releases/${release_id}/assets?per_page=100" \
+            "/repos/moaeiou/moaeiou/releases/${release_id}/assets?per_page=5" \
             --jq '.[].id' |
           while read -r asset_id; do
             echo "Deleting asset ${asset_id}"
-
             gh api \
               --method DELETE \
               "/repos/moaeiou/moaeiou/releases/assets/${asset_id}"
