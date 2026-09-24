@@ -78,6 +78,7 @@ jobs:
       - name: Clone source code
         shell: bash
         run: |
+          rm -rf */
           git clone --depth 1 https://github.com/SagerNet/sing-box.git ./
           git checkout ${{ matrix.branch }}
           git pull
