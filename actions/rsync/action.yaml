@@ -15,10 +15,11 @@ inputs:
     description: extra arguments
     required: false
 
+env:
+    server: la.867678.xyz
+
 runs:
   using: "composite"
-  env:
-    server: la.867678.xyz
   steps:
     - name: Setup SSH
       shell: bash
