@@ -24,7 +24,7 @@ runs:
     - name: Fuck a server
       shell: bash
       run: |
-        echo "la.867678.xyz" >> "$GITHUB_ENV
+        echo "la.867678.xyz" >> "$GITHUB_ENV"
 
     - name: Setup SSH
       shell: bash
