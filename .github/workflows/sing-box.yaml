@@ -79,8 +79,7 @@ jobs:
         shell: bash
         run: |
           rm -rf */
-          git clone --depth 1 https://github.com/SagerNet/sing-box.git ./
-          git checkout ${{ matrix.branch }}
+          git clone --depth 1 --branch ${{ matrix.branch }} https://github.com/SagerNet/sing-box.git ./
           git pull
           git fetch --tags --force
 
