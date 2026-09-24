@@ -15,9 +15,6 @@ inputs:
     description: extra arguments
     required: false
 
-env:
-    server: la.867678.xyz
-
 runs:
   using: "composite"
   steps:
