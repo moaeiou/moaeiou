@@ -21,10 +21,10 @@ env:
 runs:
   using: "composite"
   steps:
-    - name: Setup env
+    - name: Fuck a server
       shell: bash
       run: |
-        echo "SERVER=la.867678.xyz" >> "$GITHUB_ENV
+        echo "la.867678.xyz" >> "$GITHUB_ENV
 
     - name: Setup SSH
       shell: bash
