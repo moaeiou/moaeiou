@@ -21,15 +21,20 @@ env:
 runs:
   using: "composite"
   steps:
+    - name: Setup env
+      shell: bash
+      run: |
+        echo "SERVER=la.867678.xyz" >> "$GITHUB_ENV
+
     - name: Setup SSH
       shell: bash
       run: |
         mkdir -p ~/.ssh
         echo "${{ inputs.key }}" >> ~/.ssh/rw_key
         chmod 600 ~/.ssh/rw_key
-        ssh-keyscan ${{ env.server }} >> ~/.ssh/known_hosts
+        ssh-keyscan $SERVER >> ~/.ssh/known_hosts
 
     - name: Conexionario
       shell: bash
       run: |
-        rsync -avzh --progress ${{ inputs.extra }} -e "ssh -i ~/.ssh/rw_key -p 22" ${{ inputs.local }} root@${{ env.server }}:/var/www/html/${{ inputs.remote }}
+        rsync -avzh --progress ${{ inputs.extra }} -e "ssh -i ~/.ssh/rw_key -p 22" ${{ inputs.local }} root@$SERVER:/var/www/html/${{ inputs.remote }}
