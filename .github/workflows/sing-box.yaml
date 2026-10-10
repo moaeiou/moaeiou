@@ -3,7 +3,7 @@ name: And find out want to do(sing-box)
 on:
   schedule:
     - cron: '0 */4 * * *'
-  # push:
+  push:
   workflow_dispatch:
 
 permissions:
@@ -105,20 +105,11 @@ jobs:
           ${{ matrix.extra }} TAGS="${{ matrix.tag }}" VERSION="$VALE" make -j$(nproc)
           mv ./sing-box ./sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
 
-      - name: Upload OpenWrt binary
-        if: matrix.nickname == 'linux-amd64-musl-server' || matrix.nickname == 'linux-arm64v8-musl-server'
-        uses: actions/upload-artifact@main
-        with:
-          name: sing-box-${{ matrix.nickname }}
-          path: sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
-          if-no-files-found: error
-
       - name: Release
         uses: softprops/action-gh-release@master
         with:
           tag_name: sing-box
           files: sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
-          target_commitish: main
           body:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -131,8 +122,8 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
 
   OpenWrt:
-    name: Package sing-box-${{ matrix.pkg_arch }}
     needs: Binary
+    name: sing-box for ${{ matrix.sdk_arch }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -140,22 +131,17 @@ jobs:
         include:
           - pkg_arch: x86_64
             sdk_arch: x86-64
-            binary: linux-amd64-musl-server
+            dickname: linux-amd64-musl-server
           - pkg_arch: aarch64_generic
             sdk_arch: rockchip-armv8
-            binary: linux-arm64v8-musl-server
+            dickname: linux-arm64v8-musl-server
           - pkg_arch: aarch64_cortex-a53
             sdk_arch: mediatek-filogic
-            binary: linux-arm64v8-musl-server
+            dickname: linux-arm64v8-musl-server
+
     steps:
       - name: Checkout
         uses: actions/checkout@main
-
-      - name: Download binary
-        uses: actions/download-artifact@main
-        with:
-          name: sing-box-${{ matrix.binary }}
-          path: binary
 
       - name: Prepare SDK
         id: sdk
@@ -163,43 +149,33 @@ jobs:
         with:
           sdk_arch: ${{ matrix.sdk_arch }}
 
-      - name: Prepare package
+      - name: Prepare before compile
         shell: bash
-        env:
-          SDK_DIR: ${{ steps.sdk.outputs.sdk_dir }}
-          PKG_ARCH: ${{ matrix.pkg_arch }}
-          BINARY: ${{ matrix.binary }}
         run: |
-          cp -a sing-box "$SDK_DIR/package/sing-box"
-          sed -i "s/^LUCI_PKGARCH:=.*/LUCI_PKGARCH:=$PKG_ARCH/" "$SDK_DIR/package/sing-box/Makefile"
-          install -m 0755 "binary/sing-box-testing-$BINARY" "$SDK_DIR/package/sing-box/root/usr/bin/sing-box"
-          rm -f "$SDK_DIR/package/sing-box/root/usr/bin/DONOTREMOVE"
+          cd sing-box/
+          rm root/usr/bin/DONOTREMOVE
+          wget -O root/usr/bin/sing-box https://github.com/moaeiou/moaeiou/releases/download/sing-box/sing-box-testing-${{ matrix.dickname }}
+          cd ..
+          mv ./sing-box ${{ steps.sdk.outputs.sdk_dir }}/package/
 
-      - name: Build APK
+      - name: Build!
         shell: bash
-        env:
-          SDK_DIR: ${{ steps.sdk.outputs.sdk_dir }}
-          PKG_ARCH: ${{ matrix.pkg_arch }}
         run: |
-          cd "$SDK_DIR"
+          cd ${{ steps.sdk.outputs.sdk_dir }}
           make package/sing-box/compile V=s -j"$(nproc)"
-          mkdir -p "$GITHUB_WORKSPACE/apk"
-          files=(bin/packages/*/*/sing-box-*.apk)
-          [ "${#files[@]}" -eq 1 ] && [ -f "${files[0]}" ]
-          cp "${files[0]}" "$GITHUB_WORKSPACE/apk/sing-box-$PKG_ARCH.apk"
 
-      - name: Upload APK
-        uses: actions/upload-artifact@main
-        with:
-          name: sing-box-apk-${{ matrix.pkg_arch }}
-          path: apk/*.apk
-          if-no-files-found: error
-
-      - name: Release APK
+      - name: Release
         uses: softprops/action-gh-release@master
         with:
           tag_name: sing-box
-          files: apk/*.apk
-          fail_on_unmatched_files: true
+          files: ${{ steps.sdk.outputs.sdk_dir }}/bin/packages/*/base/sing-box*.apk
+          body:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Send to mirror
+        uses: moaeiou/moaeiou/actions/rsync@main
+        with:
+          local: sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
+          remote: sing-box/
+          key: ${{ secrets.SSH_KEY }}
