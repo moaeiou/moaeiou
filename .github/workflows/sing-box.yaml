@@ -105,11 +105,19 @@ jobs:
           ${{ matrix.extra }} TAGS="${{ matrix.tag }}" VERSION="$VALE" make -j$(nproc)
           mv ./sing-box ./sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
 
+      - name: Compression
+        shell: bash
+        if: matrix.nickname == 'linux-arm64v8-musl-server'
+        run: |
+          upx ./sing-box-testing-linux-arm64v8-musl-server ./sing-box-cfrav8
+
       - name: Release
         uses: softprops/action-gh-release@master
         with:
           tag_name: sing-box
-          files: sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
+          files: |
+            sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
+            sing-box-cfrav8
           body:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
