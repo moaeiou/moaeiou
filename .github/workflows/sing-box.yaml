@@ -109,7 +109,7 @@ jobs:
         shell: bash
         if: matrix.nickname == 'linux-arm64v8-musl-server'
         run: |
-          upx ./sing-box-testing-linux-arm64v8-musl-server ./sing-box-cfrav8
+          upx --best --lzma -o ./sing-box-cfrav8 ./sing-box-testing-linux-arm64v8-musl-server
 
       - name: Release
         uses: softprops/action-gh-release@master
