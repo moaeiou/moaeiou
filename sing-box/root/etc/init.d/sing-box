@@ -5,6 +5,7 @@ START=99
 PROG="/usr/bin/sing-box"
 
 start_service() {
+  [ -f /var/run/fw4.state ] || /sbin/fw4 restart
   config_load "sing-box"
 
   local enabled config_file working_directory
@@ -30,3 +31,4 @@ start_service() {
 service_triggers() {
   procd_add_reload_trigger "sing-box"
 }
+
