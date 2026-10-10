@@ -1,6 +1,6 @@
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=sing-box-mo
+PKG_NAME:=sing-box
 PKG_VERSION:=114.0.0
 PKG_RELEASE:=$(shell date +"%Y%m%d%H%M%S")
 PKG_LICENSE:=GPL-3.0
