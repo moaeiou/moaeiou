@@ -82,6 +82,7 @@ jobs:
           git clone --branch ${{ matrix.branch }} https://github.com/SagerNet/sing-box.git ./
           git pull
           git fetch --tags --force
+          mv ./go.mod ./go.mod.backup
 
       - name: Set up Go
         uses: actions/setup-go@main
@@ -98,6 +99,7 @@ jobs:
       - name: Build!
         shell: bash
         run: |
+          mv ./go.mod.backup ./go.mod
           sed -i 's/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) go run/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) GOAMD64= go run/' ./Makefile
           VALE=$(go run ./cmd/internal/read_tag)
           ${{ matrix.extra }} TAGS="${{ matrix.tag }}" VERSION="$VALE" make -j$(nproc)
