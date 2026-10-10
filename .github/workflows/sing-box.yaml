@@ -1,9 +1,9 @@
 name: And find out want to do(sing-box)
 
 on:
-  #schedule:
-  #  - cron: '0 */4 * * *'
-  #push:
+  schedule:
+    - cron: '0 */4 * * *'
+  push:
   workflow_dispatch:
 
 permissions:
@@ -177,6 +177,6 @@ jobs:
       - name: Send to mirror
         uses: moaeiou/moaeiou/actions/rsync@main
         with:
-          local: 
+          local: ${{ steps.sdk.outputs.sdk_dir }}/bin/packages/*/base/*.apk
           remote: sing-box/
           key: ${{ secrets.SSH_KEY }}
