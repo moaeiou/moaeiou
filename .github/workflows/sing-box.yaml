@@ -153,6 +153,7 @@ jobs:
         shell: bash
         run: |
           cd sing-box/
+          sed -i "s/^LUCI_PKGARCH:=.*/LUCI_PKGARCH:=${{ matrix.pkg_arch }}/" ./Makefile
           rm root/usr/bin/DONOTREMOVE
           wget -O root/usr/bin/sing-box https://github.com/moaeiou/moaeiou/releases/download/sing-box/sing-box-testing-${{ matrix.dickname }}
           cd ..
