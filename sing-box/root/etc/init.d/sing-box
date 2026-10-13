@@ -5,7 +5,6 @@ START=99
 PROG="/usr/bin/sing-box"
 
 start_service() {
-  [ -f /var/run/fw4.state ] || /sbin/fw4 restart
   config_load "sing-box"
 
   local enabled config_file working_directory
@@ -24,8 +23,11 @@ start_service() {
   procd_set_param limits core="unlimited"
   procd_set_param limits nofile="1000000 1000000"
   procd_set_param respawn
-
   procd_close_instance
+}
+
+start_post() {
+  /sbin/fw4 restart
 }
 
 service_triggers() {
