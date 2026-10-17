@@ -2,7 +2,7 @@
 
 ## Conexión
 
-[Telegram](https://telegram.me/Tortillas111)
+[Telegram](https://telegram.me/flancism0)
 Fuck pavel durov! You son of a bitch!
 [E-Mail:me@867678.xyz](mailto:me@867678.xyz)
 
