@@ -85,6 +85,14 @@ jobs:
         with:
           go-version: 'stable'
 
+      - name: Update dependices
+        shell: bash
+        if: matrix.nickname == 'linux-arm64v8-musl-server'
+        run: |
+          go get -u ./...
+          go fmt ./...
+          go get go
+
       - name: Build!
         shell: bash
         run: |
