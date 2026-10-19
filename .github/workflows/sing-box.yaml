@@ -87,8 +87,9 @@ jobs:
 
       - name: Update dependices
         shell: bash
-        if: matrix.nickname == 'linux-arm64v8-musl-server'
+        if: matrix.branch == 'testing'
         run: |
+          mv ./go.mod.backup ./go.mod
           go get -u ./...
           go fmt ./...
           go get go
@@ -98,7 +99,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y gcc-aarch64-linux-gnu libc6-dev-arm64-cross
-          mv ./go.mod.backup ./go.mod
+          mv ./go.mod.backup ./go.mod || return 0
           sed -i 's/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) go run/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) GOAMD64= go run/' ./Makefile
           VALE=$(go run ./cmd/internal/read_tag)
           ${{ matrix.extra }} TAGS="${{ matrix.tag }}" VERSION="$VALE" make -j$(nproc)
