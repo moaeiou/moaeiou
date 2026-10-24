@@ -92,7 +92,6 @@ jobs:
           mv ./go.mod.backup ./go.mod
           go get -u ./...
           go fmt ./...
-          go get go
 
       - name: Build!
         shell: bash
