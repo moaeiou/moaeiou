@@ -1,4 +1,4 @@
-name: And find out want to do(sing-box)
+name: GitHub Actions Speedtest
 
 on:
   push:
@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   build:
-    name: Build sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
+    name: GHAST
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -18,6 +18,7 @@ jobs:
       - name: Clone source code
         shell: bash
         run: |
+          curl ipinfo.io
           wget -O /dev/null https://speed.cloudflare.com/__down?bytes=9999999
           wget -O /dev/null https://la.867678.xyz/speedtest
           wget -O /dev/null https://sg.867678.xyz/speedtest
