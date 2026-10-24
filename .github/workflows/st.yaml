@@ -1,0 +1,24 @@
+name: And find out want to do(sing-box)
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: Clone source code
+        shell: bash
+        run: |
+          wget -O /dev/null https://speed.cloudflare.com/__down?bytes=9999999
+          wget -O /dev/null https://la.867678.xyz/speedtest
+          wget -O /dev/null https://sg.867678.xyz/speedtest
+          wget -O /dev/null https://ki.867678.xyz/speedtest
