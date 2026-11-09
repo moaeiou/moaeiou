@@ -17,7 +17,6 @@ We have some mirrors, Addr:
 | Los Angeles, CA, U.S. | `https://la.867678.xyz/` | Tier 1 but not support IPV6 |
 | Osaka, Kansai, Japan  | `https://ki.867678.xyz/` | Tier 2 , sync every hour    |
 | Sydney, NSWales, AUS. | `https://au.867678.xyz/` | Tier 2 , sync every hour    |
-| Singapore             | `https://sg.867678.xyz/` | Tier 2 , sync every hour    |
 
 ## 💁 How to use?
 
