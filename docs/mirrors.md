@@ -18,15 +18,13 @@ We have some mirrors, Addr:
 | Osaka, Kansai, Japan  | `https://ki.867678.xyz/` | Tier 2 , sync every hour    |
 | Sydney, NSWales, AUS. | `https://au.867678.xyz/` | Tier 2 , sync every hour    |
 
+The `Los Angeles` node was so slowly, so i gave a CDN.
+
+If you need rsync, please use `23.95.28.150`.
+
 ## 💁 How to use?
 
-Just need change addr from `Origin` to `https://x.867678.xyz/` or any others
-
-For example:
-
-- You need to download `https://downloads.openwrt.org/snapshots/targets/x86/64/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst`
-- But it only have `5MB/S`, That is so slowly.
-- So you can change address to `https://x.867678.xyz/sdk/openwrt-sdk-x86-64_gcc-14.4.0_musl.Linux-x86_64.tar.zst`.
+Just need change addr from `Origin` to `https://x.867678.xyz/` or any others.
 
 ## rsync
 
@@ -47,7 +45,7 @@ Any mirror are all listening port `873`
 And option: `--delete` that 1:1 sync any changes from upstream
 
 ```bash
-rsync -avz --exclude='contento24/' --exclude='0fi/' --exclude='speedtest' --delete rsync://server/sync/ /var/www/html/
+rsync -avz --exclude='0fi/' --exclude='speedtest' --delete rsync://server/sync/ /var/www/html/
 ```
 
 ## 🙏 Acknowledgements
@@ -55,8 +53,6 @@ rsync -avz --exclude='contento24/' --exclude='0fi/' --exclude='speedtest' --dele
 Server、CDN、Domain: <https://colocrossing.com> <https://cloudflare.com> <https://spaceship.com>
 
 Software: <https://nginx.org> <https://github.com/RsyncProject/rsync> <https://github.com/AnInsomniacy/aria2-next> <https://867678.xyz/projects/fancyindex-theme>
-
-Server Donate: <https://github.com/midqwerty-alt> <https://github.com/muchengrui110-source>
 
 ## ⚖️ LICENSE
 
