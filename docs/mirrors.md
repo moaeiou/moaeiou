@@ -15,8 +15,9 @@ We have some mirrors, Addr:
 | Location              | Address                  | Note                        |
 | --------------------- | ------------------------ | --------------------------- |
 | Los Angeles, CA, U.S. | `https://la.867678.xyz/` | Tier 1 but not support IPV6 |
-| Osaka, Kansai, Japan  | `https://ki.867678.xyz/` | Tier 2 , sync every hour    |
 | Sydney, NSWales, AUS. | `https://au.867678.xyz/` | Tier 2 , sync every hour    |
+| Osaka, Kansai, Japan  | `https://ki.867678.xyz/` | Tier 2 , sync every hour    |
+| Singapore  | `https://sg.867678.xyz/` | Tier 2 , sync every hour    |
 
 The `Los Angeles` node was so slowly, so i gave a CDN.
 
