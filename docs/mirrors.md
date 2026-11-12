@@ -28,16 +28,6 @@ Just need change addr from `Origin` to `https://x.867678.xyz/` or any others.
 
 ## rsync
 
-### 🪣 GitHub Actions
-
-```yaml
-- name: Send to mirror
-  uses: moaeiou/moaeiou/actions/rsync@main
-  with:
-    local: ${{ steps.sdk.outputs.sdk_dir }}/bin/packages/x86_64/base/
-    key: ${{ secrets.SSH_KEY }}
-```
-
 ### 🧱 Sync to your mirror
 
 Any mirror are all listening port `873`
