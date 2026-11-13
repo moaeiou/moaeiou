@@ -31,7 +31,7 @@ Copyright MoAEIOU All rights reserved. Licensed under the [MoPL](https://867678.
 
 ### GPG Keys
 
-GPG Hash(ECC Last Change:2026-10-19): `E536A1D45FE191F44D7BC2A35AA0B14C344265E5`
+GPG Hash(ECC Last Change:2026-10-19): `DA43BA0337CCADCC71F2A65149039A057354870C`
 
 [View revoked certificates](https://github.com/moaeiou/moaeiou/tree/main/revocs)
 

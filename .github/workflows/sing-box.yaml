@@ -17,50 +17,54 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          # AMD64 SERVER
           - nickname: "linux-amd64v4-glibc-server"
             branch: "testing"
-            extra: "GOAMD64=v4"
+            extra: "GOAMD64=v4 CC=gcc"
             tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
           - nickname: "linux-amd64v3-glibc-server"
             branch: "testing"
-            extra: "GOAMD64=v3"
+            extra: "GOAMD64=v3 CC=gcc"
             tag: "with_quic with_utls with_acme with_wireguard tfogo_checklinkname0 badlinkname"
           - nickname: "linux-amd64v2-glibc-server"
             branch: "testing"
-            extra: "GOAMD64=v2"
+            extra: "GOAMD64=v2 CC=gcc"
             tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
-          - nickname: "linux-amd64-musl-server"
+          - nickname: "linux-amd64-server"
             branch: "testing"
             extra: "CGO_ENABLED=0"
             tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
+          # ARM64 SERVER
           - nickname: "linux-arm64v9.2-glibc-server"
             branch: "testing"
-            extra: "CC=aarch64-linux-gnu-gcc CGO_ENABLED=1 GOARCH=arm64 GOARM64=v9.2"
+            extra: "CGO_ENABLED=1 CC=aarch64-linux-gnu-gcc GOARCH=arm64 GOARM64=v9.2"
             tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
           - nickname: "linux-arm64v8-musl-server"
             branch: "testing"
-            extra: "CGO_ENABLED=0 GOARCH=arm64 GOARM64=v8.0"
+            extra: "CGO_ENABLED=0 CC=aarch64-linux-musl-gcc GOARCH=arm64 GOARM64=v8.0"
             tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
           - nickname: "linux-arm64-musl-server"
             branch: "testing"
-            extra: "CGO_ENABLED=0 GOARCH=arm64"
+            extra: "CGO_ENABLED=0 CC=aarch64-linux-musl-gcc GOARCH=arm64"
             tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
+          # For V2rayN users
           - nickname: "linux-amd64v4-glibc-v2rayN"
             branch: "stable"
-            extra: "GOAMD64=v4"
+            extra: "GOAMD64=v4 CC=gcc"
             tag: "with_quic with_wireguard with_utls with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
           - nickname: "linux-amd64v3-glibc-v2rayN"
             branch: "stable"
-            extra: "GOAMD64=v3"
+            extra: "GOAMD64=v3 CC=gcc"
             tag: "with_quic with_wireguard with_utls with_acme with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
           - nickname: "linux-amd64v2-glibc-v2rayN"
             branch: "stable"
-            extra: "GOAMD64=v2"
+            extra: "GOAMD64=v2 CC=gcc"
             tag: "with_quic with_wireguard with_utls with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
           - nickname: "linux-amd64v1-glibc-v2rayN"
             branch: "stable"
-            extra: "GOAMD64=v1"
+            extra: "GOAMD64=v1 CC=gcc"
             tag: "with_quic with_wireguard with_utls with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
+          # For macOS users
           - nickname: "darwin-arm64-v2rayN"
             branch: "stable"
             extra: "GOOS=darwin GOARCH=arm64"
@@ -93,8 +97,8 @@ jobs:
         shell: bash
         run: |
           sudo apt update
-          sudo apt install -y gcc-aarch64-linux-gnu libc6-dev-arm64-cross
-          mv ./go.mod.backup ./go.mod || true
+          sudo apt install -y gcc-aarch64-linux-gnu aarch64-linux-gnu-gcc-musl libc6-dev-arm64-cross
+          mv ./go.mod.backup ./go.mod
           sed -i 's/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) go run/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) GOAMD64= go run/' ./Makefile
           VALE=$(go run ./cmd/internal/read_tag)
           ${{ matrix.extra }} TAGS="${{ matrix.tag }}" VERSION="$VALE" make -j$(nproc)
