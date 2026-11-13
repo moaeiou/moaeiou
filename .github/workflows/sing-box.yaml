@@ -78,26 +78,24 @@ jobs:
           git clone --branch ${{ matrix.branch }} https://github.com/SagerNet/sing-box.git ./
           git pull
           git fetch --tags --force
-          mv ./go.mod ./go.mod.backup
 
       - name: Set up Go
         uses: actions/setup-go@main
         with:
           go-version: 'stable'
+          cache: false
 
       - name: Update dependices
         shell: bash
         if: matrix.branch == 'testing'
         run: |
-          mv ./go.mod.backup ./go.mod
           go get -u ./...
-          go fmt ./...
 
       - name: Build!
         shell: bash
         run: |
-          sudo apt update
-          sudo apt install -y gcc-aarch64-linux-gnu libc6-dev-arm64-cross
+          sudo apt-get update
+          sudo apt-get install -y gcc-aarch64-linux-gnu libc6-dev-arm64-cross
           sed -i 's/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) go run/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) GOAMD64= go run/' ./Makefile
           VALE=$(go run ./cmd/internal/read_tag)
           ${{ matrix.extra }} TAGS="${{ matrix.tag }}" VERSION="$VALE" make -j$(nproc)
