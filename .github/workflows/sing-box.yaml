@@ -103,7 +103,7 @@ jobs:
 
       - name: UPX!
         shell: bash
-        if: matrix.nickname == 'linux-arm64v8-musl-server'
+        if: matrix.nickname == 'linux-arm64v8-server'
         run: |
           upx --best --lzma -o ./sing-box-${{ matrix.branch }}-${{ matrix.nickname }}-upx ./sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
 
