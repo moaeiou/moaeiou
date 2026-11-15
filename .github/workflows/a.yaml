@@ -1,4 +1,4 @@
-name: Hating you is overrated(rayburst)
+name: NO NONONO
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
       - name: cabeza
         shell: bash
         run: |
-          sdk_name=openwrt-sdk-${{ inputs.sdk_arch }}_gcc-${{ inputs.gcc_version }}_musl.Linux-x86_64
+          sdk_name=openwrt-sdk-${{ matrix.sdk_arch }}_gcc-14.4.0_musl.Linux-x86_64
           echo "sdk_name=$sdk_name" >> $GITHUB_OUTPUT
 
           curl --resolve la.867678.xyz:443:23.95.28.150 -LO https://la.867678.xyz/sdk/$sdk_name.tar.zst
