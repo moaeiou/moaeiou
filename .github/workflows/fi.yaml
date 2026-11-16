@@ -24,10 +24,13 @@ jobs:
         run: |
           sdk_name=openwrt-sdk-${{ matrix.sdk_arch }}_gcc-14.4.0_musl.Linux-x86_64
           echo "sdk_name=$sdk_name" >> $GITHUB_OUTPUT
-
+          echo "LA"
           curl --resolve la.867678.xyz:443:23.95.28.150 -LO https://la.867678.xyz/sdk/$sdk_name.tar.zst
-
+          echo "osaka"
           curl -LO https://ki.867678.xyz/sdk/$sdk_name.tar.zst
+          echo "singapore"
           curl -LO https://sg.867678.xyz/sdk/$sdk_name.tar.zst
+          echo "AUS"
           curl -LO https://au.867678.xyz/sdk/$sdk_name.tar.zst
+          echo "osaka+cloudfront"
           curl -LO https://d3eh3bfd3ihe0o.cloudfront.net/sdk/$sdk_name.tar.zst
