@@ -39,22 +39,20 @@ jobs:
           # ARM64 SERVER
           - nickname: "linux-arm64v9.2-glibc-server"
             branch: "testing"
-            mio: true
             extra: "CGO_ENABLED=1 CC=aarch64-linux-gnu-gcc GOARCH=arm64 GOARM64=v9.2"
             tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
           - nickname: "linux-arm64-server"
             branch: "testing"
+            mio: true
             extra: "CGO_ENABLED=0 GOARCH=arm64"
             tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
           # For V2rayN users
           - nickname: "linux-amd64v4-glibc-v2rayN"
             branch: "stable"
-            mio: true
             extra: "GOAMD64=v4 CC=gcc"
             tag: "with_quic with_wireguard with_utls with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
           - nickname: "linux-amd64v3-glibc-v2rayN"
             branch: "stable"
-            mio: true
             extra: "GOAMD64=v3 CC=gcc"
             tag: "with_quic with_wireguard with_utls with_acme with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
           - nickname: "linux-amd64v2-glibc-v2rayN"
