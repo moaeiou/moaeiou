@@ -22,7 +22,7 @@ jobs:
             branch: "testing"
             mio: true
             extra: "GOAMD64=v4 CC=gcc"
-            tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
+            tag: "with_quic with_utls with_acme with_wireguard tfogo_checklinkname0 badlinkname"
           - nickname: "linux-amd64v3-glibc-server"
             branch: "testing"
             mio: true
