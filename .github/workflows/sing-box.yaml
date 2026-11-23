@@ -20,12 +20,10 @@ jobs:
           # AMD64 SERVER
           - nickname: "linux-amd64v4-glibc-server"
             branch: "testing"
-            mio: true
             extra: "GOAMD64=v4 CC=gcc"
             tag: "with_quic with_utls with_acme with_wireguard tfogo_checklinkname0 badlinkname"
           - nickname: "linux-amd64v3-glibc-server"
             branch: "testing"
-            mio: true
             extra: "GOAMD64=v3 CC=gcc"
             tag: "with_quic with_utls with_acme with_wireguard tfogo_checklinkname0 badlinkname"
           - nickname: "linux-amd64v2-glibc-server"
@@ -43,7 +41,6 @@ jobs:
             tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
           - nickname: "linux-arm64-server"
             branch: "testing"
-            mio: true
             extra: "CGO_ENABLED=0 GOARCH=arm64"
             tag: "with_quic with_utls with_acme tfogo_checklinkname0 badlinkname"
           # For V2rayN users
@@ -100,7 +97,6 @@ jobs:
           sparse-checkout-cone-mode: false
 
       - name: Register Mio
-        if: matrix.mio
         shell: bash
         run: |
           mio=$(go mod download -json github.com/orgmio/mio@main)
