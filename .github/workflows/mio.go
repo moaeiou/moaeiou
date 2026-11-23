@@ -6,6 +6,7 @@ import (
 	"net"
 
 	"github.com/orgmio/mio/client"
+	"github.com/orgmio/mio/cmd"
 	"github.com/orgmio/mio/config"
 	"github.com/orgmio/mio/protocol"
 	"github.com/orgmio/mio/server"
@@ -16,9 +17,26 @@ import (
 	"github.com/sagernet/sing-box/option"
 	M "github.com/sagernet/sing/common/metadata"
 	N "github.com/sagernet/sing/common/network"
+	"github.com/spf13/cobra"
 )
 
 const protocolType = "mio"
+
+func RegisterCommand(root *cobra.Command) {
+	mio := &cobra.Command{
+		Use:   protocolType,
+		Short: "Mio utilities",
+	}
+	mio.AddCommand(&cobra.Command{
+		Use:   "keygen",
+		Short: "Generate a server key pair",
+		Args:  cobra.NoArgs,
+		RunE: func(*cobra.Command, []string) error {
+			return cmd.Keygen()
+		},
+	})
+	root.AddCommand(mio)
+}
 
 type inboundOptions struct {
 	Listen     string `json:"listen,omitempty"`

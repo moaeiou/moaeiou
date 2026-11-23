@@ -60,7 +60,7 @@ jobs:
             branch: "stable"
             extra: "GOAMD64=v1 CC=gcc"
             tag: "with_quic with_wireguard with_utls with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
-          # For macOS users
+          # For macOS
           - nickname: "darwin-arm64-v2rayN"
             branch: "stable"
             extra: "GOOS=darwin GOARCH=arm64"
@@ -88,7 +88,6 @@ jobs:
           go get -u ./...
 
       - name: Check out Mio adapter
-        if: matrix.mio
         uses: actions/checkout@main
         with:
           path: mio-ci
@@ -112,14 +111,17 @@ jobs:
           sed -i '/^[[:space:]]*socks\.RegisterOutbound(registry)$/a\	mio.RegisterOutbound(registry)' include/registry.go
           grep -Fq 'mio.RegisterInbound(registry)' include/registry.go
           grep -Fq 'mio.RegisterOutbound(registry)' include/registry.go
-          gofmt -w include/registry.go
-          go get "github.com/orgmio/mio/client@$mio_version" "github.com/orgmio/mio/server@$mio_version"
+          sed -i '/^func main() {$/i\import "github.com/sagernet/sing-box/protocol/mio"\n' cmd/sing-box/main.go
+          sed -i '/^func main() {$/a\	mio.RegisterCommand(mainCommand)' cmd/sing-box/main.go
+          grep -Fq 'mio.RegisterCommand(mainCommand)' cmd/sing-box/main.go
+          gofmt -w include/registry.go cmd/sing-box/main.go
+          go get "github.com/orgmio/mio/client@$mio_version" "github.com/orgmio/mio/server@$mio_version" "github.com/orgmio/mio/cmd@$mio_version"
 
       - name: Build!
         shell: bash
         run: |
           sudo apt-get update
-          sudo apt-get install gcc-aarch64-linux-gnu libc6-dev-arm64-cross
+          sudo apt-get install -y gcc-aarch64-linux-gnu libc6-dev-arm64-cross
           sed -i 's/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) go run/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) GOAMD64= go run/' ./Makefile
           VALE=$(go run ./cmd/internal/read_tag)
           ${{ matrix.extra }} TAGS="${{ matrix.tag }}" VERSION="$VALE" make -j$(nproc)
