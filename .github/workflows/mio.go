@@ -132,6 +132,16 @@ func newOutbound(_ context.Context, _ adapter.Router, _ log.ContextLogger, tag s
 	}, nil
 }
 
+func (h *mioOutbound) Start(stage adapter.StartStage, scope *adapter.Scope) error {
+	if stage == adapter.StartStateStart {
+		scope.Add(func() error {
+			h.dialer.Close()
+			return nil
+		})
+	}
+	return nil
+}
+
 func (h *mioOutbound) DialContext(ctx context.Context, network string, destination M.Socksaddr) (net.Conn, error) {
 	if N.NetworkName(network) != N.NetworkTCP {
 		return nil, N.ErrUnknownNetwork
