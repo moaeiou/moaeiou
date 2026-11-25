@@ -66,7 +66,7 @@ jobs:
             extra: "GOOS=darwin GOARCH=arm64"
             tag: "with_quic with_wireguard with_utls with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
           # For macOS
-          - nickname: "windows-amd64v4-v2rayN"
+          - nickname: "windows-amd64v4-v2rayN.exe"
             branch: "stable"
             extra: "GOOS=windows GOAMD64=v4"
             tag: "with_quic with_wireguard with_utls with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
@@ -130,7 +130,7 @@ jobs:
           sed -i 's/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) go run/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) GOAMD64= go run/' ./Makefile
           VALE=$(go run ./cmd/internal/read_tag)
           ${{ matrix.extra }} TAGS="${{ matrix.tag }}" VERSION="$VALE" make -j$(nproc)
-          mv ./sing-box ./sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
+          mv ./sing-box* ./sing-box-${{ matrix.branch }}-${{ matrix.nickname }}
 
       - name: UPX!
         shell: bash
