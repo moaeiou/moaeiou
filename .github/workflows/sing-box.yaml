@@ -65,6 +65,11 @@ jobs:
             branch: "stable"
             extra: "GOOS=darwin GOARCH=arm64"
             tag: "with_quic with_wireguard with_utls with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
+          # For macOS
+          - nickname: "windows-amd64v4-v2rayN"
+            branch: "stable"
+            extra: "GOOS=windows GOAMD64=v4"
+            tag: "with_quic with_wireguard with_utls with_clash_api with_gvisor tfogo_checklinkname0 badlinkname"
 
     steps:
       - name: Clone source code
