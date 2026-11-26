@@ -15,7 +15,7 @@ Fuck pavel durov! You son of a bitch!
 
 ## GitHub Información
 
-![GitHub Stats](https://camo.githubusercontent.com/c4b1e1c6c43f2dedf0b2614bb4ce998c7f60612669b912739bbce9537ae87201/68747470733a2f2f6769746875622d73746174732d657874656e6465642e76657263656c2e6170702f6170693f757365726e616d653d6d6f6165696f752673686f775f69636f6e733d7472756526696e636c7564655f616c6c5f636f6d6d6974733d74727565)
+[![GitHub Stats](https://github-stats-extended.vercel.app/api?username=moaeiou&rank_icon=github&show=reviews%2Cdiscussions_started%2Cdiscussions_answered%2Cprs_merged%2Cprs_merged_percentage%2Cprs_commented%2Cprs_reviewed%2Cissues_commented%2Ccontributions%2Call_time_contribs&show_icons=true&include_all_commits=true&theme=light_github)](https://github-stats-extended.vercel.app/api?username=moaeiou&rank_icon=github&show=reviews%2Cdiscussions_started%2Cdiscussions_answered%2Cprs_merged%2Cprs_merged_percentage%2Cprs_commented%2Cprs_reviewed%2Cissues_commented%2Ccontributions%2Call_time_contribs&show_icons=true&include_all_commits=true&theme=light_github)
 
 ## Habilidades
 
