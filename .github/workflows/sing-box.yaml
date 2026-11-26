@@ -92,6 +92,13 @@ jobs:
         run: |
           go get -u ./...
 
+      - name: Arm64 GNU LibC
+        shell: bash
+        if: matrix.nickname == 'linux-arm64v9.2-glibc-server'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-aarch64-linux-gnu libc6-dev-arm64-cross
+
       - name: Check out Mio adapter
         uses: actions/checkout@main
         with:
@@ -125,8 +132,6 @@ jobs:
       - name: Build!
         shell: bash
         run: |
-          sudo apt-get update
-          sudo apt-get install -y gcc-aarch64-linux-gnu libc6-dev-arm64-cross
           sed -i 's/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) go run/GOOS=$(GOHOSTOS) GOARCH=$(GOHOSTARCH) GOAMD64= go run/' ./Makefile
           VALE=$(go run ./cmd/internal/read_tag)
           ${{ matrix.extra }} TAGS="${{ matrix.tag }}" VERSION="$VALE" make -j$(nproc)

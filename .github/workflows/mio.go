@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"net"
+	"net/netip"
 
 	"github.com/orgmio/mio/client"
 	"github.com/orgmio/mio/cmd"
@@ -15,8 +16,10 @@ import (
 	"github.com/sagernet/sing-box/adapter/outbound"
 	"github.com/sagernet/sing-box/log"
 	"github.com/sagernet/sing-box/option"
+	"github.com/sagernet/sing/common/bufio"
 	M "github.com/sagernet/sing/common/metadata"
 	N "github.com/sagernet/sing/common/network"
+	"github.com/sagernet/sing/service"
 	"github.com/spf13/cobra"
 )
 
@@ -106,14 +109,16 @@ type outboundOptions struct {
 
 type mioOutbound struct {
 	outbound.Adapter
-	dialer *client.Dialer
+	dialer       *client.Dialer
+	dns          adapter.DNSRouter
+	dnsTransport adapter.DNSTransportManager
 }
 
 func RegisterOutbound(registry *outbound.Registry) {
 	outbound.Register[outboundOptions](registry, protocolType, newOutbound)
 }
 
-func newOutbound(_ context.Context, _ adapter.Router, _ log.ContextLogger, tag string, options outboundOptions) (adapter.Outbound, error) {
+func newOutbound(ctx context.Context, _ adapter.Router, _ log.ContextLogger, tag string, options outboundOptions) (adapter.Outbound, error) {
 	if options.Server == "" || options.ServerPort == 0 || options.Dest == "" {
 		return nil, errors.New("mio requires server, server_port and dest")
 	}
@@ -122,7 +127,9 @@ func newOutbound(_ context.Context, _ adapter.Router, _ log.ContextLogger, tag s
 		return nil, err
 	}
 	return &mioOutbound{
-		Adapter: outbound.NewAdapter(protocolType, tag, []string{N.NetworkTCP}, nil),
+		Adapter:      outbound.NewAdapter(protocolType, tag, []string{N.NetworkTCP, N.NetworkUDP}, nil),
+		dns:          service.FromContext[adapter.DNSRouter](ctx),
+		dnsTransport: service.FromContext[adapter.DNSTransportManager](ctx),
 		dialer: client.NewDialer(protocol.Peer{
 			Server:     options.Server,
 			ServerPort: int(options.ServerPort),
@@ -143,12 +150,92 @@ func (h *mioOutbound) Start(stage adapter.StartStage, scope *adapter.Scope) erro
 }
 
 func (h *mioOutbound) DialContext(ctx context.Context, network string, destination M.Socksaddr) (net.Conn, error) {
-	if N.NetworkName(network) != N.NetworkTCP {
+	switch N.NetworkName(network) {
+	case N.NetworkTCP:
+		return h.dialer.Dial(ctx, destination.String())
+	case N.NetworkUDP:
+		conn, ip, err := h.ListenPacketWithDestination(ctx, destination)
+		if err != nil {
+			return nil, err
+		}
+		return bufio.NewBindPacketConn(conn, M.SocksaddrFrom(ip, destination.Port)), nil
+	default:
 		return nil, N.ErrUnknownNetwork
 	}
-	return h.dialer.Dial(ctx, destination.String())
 }
 
-func (h *mioOutbound) ListenPacket(context.Context, M.Socksaddr) (net.PacketConn, error) {
-	return nil, N.ErrUnknownNetwork
+func (h *mioOutbound) ListenPacket(ctx context.Context, destination M.Socksaddr) (net.PacketConn, error) {
+	conn, ip, err := h.ListenPacketWithDestination(ctx, destination)
+	if err != nil {
+		return nil, err
+	}
+	if destination.IsDomain() {
+		return bufio.NewNATPacketConn(bufio.NewPacketConn(conn), M.SocksaddrFrom(ip, destination.Port), destination), nil
+	}
+	return conn, nil
+}
+
+func (h *mioOutbound) ListenPacketWithDestination(ctx context.Context, destination M.Socksaddr) (net.PacketConn, netip.Addr, error) {
+	ctx, metadata := adapter.ExtendContext(ctx)
+	metadata.Outbound = h.Tag()
+	metadata.Destination = destination
+	ip, err := h.resolveUDP(ctx, destination)
+	if err != nil {
+		return nil, netip.Addr{}, err
+	}
+	conn, err := h.dialer.ListenUDP(ctx)
+	if err != nil {
+		return nil, netip.Addr{}, err
+	}
+	return &mioPacketConn{PacketConn: conn, realIP: h.realUDPAddress}, ip, nil
+}
+
+type mioPacketConn struct {
+	net.PacketConn
+	realIP func(netip.Addr) bool
+}
+
+func (c *mioPacketConn) WriteTo(p []byte, addr net.Addr) (int, error) {
+	if addr == nil || !c.realIP(M.SocksaddrFromNet(addr).Addr) {
+		return 0, errors.New("mio UDP packet requires a real destination IP")
+	}
+	return c.PacketConn.WriteTo(p, addr)
+}
+
+func (h *mioOutbound) resolveUDP(ctx context.Context, destination M.Socksaddr) (netip.Addr, error) {
+	if destination.Port == 0 {
+		return netip.Addr{}, errors.New("mio UDP requires a destination port")
+	}
+	if !destination.IsDomain() {
+		if h.realUDPAddress(destination.Addr) {
+			return destination.Addr.Unmap(), nil
+		}
+		return netip.Addr{}, errors.New("mio UDP requires a real destination IP")
+	}
+	if h.dns == nil {
+		return netip.Addr{}, errors.New("mio UDP requires the sing-box DNS router for domains")
+	}
+	ips, err := h.dns.Lookup(ctx, destination.Fqdn, adapter.DNSQueryOptions{})
+	if err != nil {
+		return netip.Addr{}, err
+	}
+	for _, ip := range ips {
+		if h.realUDPAddress(ip) {
+			return ip.Unmap(), nil
+		}
+	}
+	return netip.Addr{}, errors.New("mio UDP target has no real IP")
+}
+
+func (h *mioOutbound) realUDPAddress(ip netip.Addr) bool {
+	ip = ip.Unmap()
+	if !ip.IsValid() || ip.IsUnspecified() || ip.Zone() != "" {
+		return false
+	}
+	if h.dnsTransport != nil {
+		if fake := h.dnsTransport.FakeIP(); fake != nil && fake.Store().Contains(ip) {
+			return false
+		}
+	}
+	return true
 }
